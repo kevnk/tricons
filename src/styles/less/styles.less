@@ -1,13 +1,13 @@
 @import 'tricons';
 
-.tricon,
-.tricon-text,
-#icon2 {
-  background: #000;
+.tricon {
+  .tricon();
+  border-radius: 2px;
 }
 
 #icon2 {
-  .tricon(auto, 60px, 1px, #999, #fff, 10px, 20px);
+  .tricon(5px, auto, 60px, 10px, 20px, #999, #fff, #111, #333);
+  border-radius: 4px;
 }
 
 // Example index.html styles
@@ -17,6 +17,16 @@
   margin: 0 auto;
   text-align: center;
   font-family: sans-serif;
+  color: #222;
+}
+
+.links a {
+  display: block;
+  line-height: 1.5;
+  color: #2A97EF;
+  &:hover {
+    color: saturate(lighten(#2A97EF, 5%), 5%);
+  }
 }
 
 hr {

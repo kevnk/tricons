@@ -38,9 +38,21 @@ module.exports = function(grunt) {
           map: true,
         },
         src: './src/styles/css/styles.css'
-      },
+      }
+    },
+
+    copy: {
       dist: {
-        src: './dist/tricons.css'
+        files: [
+          {
+            src: ['./src/styles/less/tricons.less'],
+            dest: './dist/tricons.less'
+          },
+          {
+            src: ['./src/scripts/js/tricons.js'],
+            dest: './dist/tricons.js'
+          }
+        ]
       }
     },
 
@@ -66,13 +78,13 @@ module.exports = function(grunt) {
           spawn: false
         },
         files: './src/styles/less/**/*.less',
-        tasks: ['less', 'postcss']
+        tasks: ['dist']
       }
     }
 
   });
 
-  grunt.registerTask('dist', ['less', 'postcss']);
+  grunt.registerTask('dist', ['less', 'postcss', 'copy']);
   grunt.registerTask('default', ['dist', 'watch']);
 
 };

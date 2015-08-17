@@ -3,57 +3,62 @@
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Tricons</title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Tricons</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <link rel="stylesheet" type="text/css" href="styles/css/styles.css" />
-    </head>
-    <body>
+    <link rel="stylesheet" type="text/css" href="styles/css/styles.css" />
+  </head>
+  <body>
 
-        <div class="container">
-          <a class="tricon-text" href="#" data-tricon="hamburger-menu" data-tricon-toggle="x">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span>Menu</span>
-          </a><hr>
-          <a id="icon2" href="#" data-tricon="hamburger-menu" data-tricon-toggle="x">
-            <span>Menu</span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </a><hr>
-          <a id="tricon_target" class="tricon" href="#">
-            <span></span>
-            <span></span>
-            <span></span>
-          </a>
-          <!-- links to morph it -->
-          <div class="links">
-            <a href="#tricon_target" data-to-tricon="hamburger-menu">Hamburger Menu</a><br />
-            <a href="#tricon_target" data-to-tricon="x">Close Icon</a><br />
-            <a href="#tricon_target" data-to-tricon="arrow-left">Left Arrow</a><br />
-            <a href="#tricon_target" data-to-tricon="arrow-right">Right Arrow</a><br />
-            <a href="#tricon_target" data-to-tricon="arrow-up">Up Arrow</a><br />
-            <a href="#tricon_target" data-to-tricon="arrow-down">Down Arrow</a><br />
-            <a href="#tricon_target" data-to-tricon="plus">Plus sign</a><br />
-            <a href="#tricon_target" data-to-tricon="minus">Minus sign</a><br />
-            <a href="#tricon_target" data-to-tricon="loading">Loading</a><br />
-            <a href="#tricon_target" data-to-tricon="caret-up">Caret up</a><br />
-            <a href="#tricon_target" data-to-tricon="caret-down">Caret down</a><br />
-            <a href="#tricon_target" data-to-tricon="caret-left">Caret left</a><br />
-            <a href="#tricon_target" data-to-tricon="caret-right">Caret right</a><br />
-          </div>
-        </div>
+    <div class="container">
+      <p>Toggle button</p>
+      <a class="tricon" href="#" data-tricon="hamburger-menu" data-tricon-toggle="x">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span>Menu</span>
+      </a>
+      <hr>
 
+      <p>Customized toggle button</p>
+      <a id="icon2" href="#" data-tricon="hamburger-menu" data-tricon-toggle="x">
+        <span>Menu</span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+      <hr>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
-        <script src="scripts/main.js"></script>
-        <script src="//localhost:33333/livereload.js"></script>
-    </body>
+      <p>Toggled by links</p>
+      <a id="tricon_target" class="tricon" href="#">
+        <span></span>
+        <span></span>
+        <span></span>
+      </a>
+      <!-- links to morph it -->
+      <div class="links">
+        <a href="#tricon_target" data-to-tricon="hamburger-menu">Hamburger Menu</a>
+        <a href="#tricon_target" data-to-tricon="x">Close Icon</a>
+        <a href="#tricon_target" data-to-tricon="arrow-left">Left Arrow</a>
+        <a href="#tricon_target" data-to-tricon="arrow-right">Right Arrow</a>
+        <a href="#tricon_target" data-to-tricon="arrow-up">Up Arrow</a>
+        <a href="#tricon_target" data-to-tricon="arrow-down">Down Arrow</a>
+        <a href="#tricon_target" data-to-tricon="plus">Plus sign</a>
+        <a href="#tricon_target" data-to-tricon="minus">Minus sign</a>
+        <a href="#tricon_target" data-to-tricon="loading">Loading</a>
+        <a href="#tricon_target" data-to-tricon="caret-up">Caret up</a>
+        <a href="#tricon_target" data-to-tricon="caret-down">Caret down</a>
+        <a href="#tricon_target" data-to-tricon="caret-left">Caret left</a>
+        <a href="#tricon_target" data-to-tricon="caret-right">Caret right</a>
+      </div>
+    </div>
+
+    <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="scripts/js/tricons.js"></script>
+    <script src="//localhost:33333/livereload.js"></script>
+  </body>
 </html>
