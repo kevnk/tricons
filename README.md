@@ -38,17 +38,16 @@ $ bower install -S tricons
 #### 3. Create some customized tricon buttons with your less
 ```less
 .my-custom-tricon {
-    // FYI, these are also the default variables
-    @tricon-thickness: 2px; 
-    @tricon-min-width: 40px; 
-    @tricon-height: 40px; 
-    @tricon-pad-vert: 0; 
-    @tricon-pad-horz: 0; 
-    @tricon-color: #fff; 
-    @tricon-color-hover: #fff; 
-    @tricon-bg-color: #2A97EF; 
-    @tricon-bg-color-hover: saturate(lighten(#2A97EF, 5%), 5%);
-    .tricon(@tricon-thickness, @tricon-min-width, @tricon-height, @tricon-pad-vert, @tricon-pad-horz, @tricon-color, @tricon-color-hover, @tricon-bg-color, @tricon-bg-color-hover);
+    @thickness: 1px; 
+    @min-width: 60px; 
+    @height: 60px; 
+    @pad-vert: 10px; 
+    @pad-horz: 20px; 
+    @color: #fff; 
+    @color-hover: #fff; 
+    @bg-color: #FEEA3A; 
+    @bg-color-hover: saturate(lighten(#FEEA3A, 5%), 5%);
+    .tricon(@thickness, @min-width, @height, @pad-vert, @pad-horz, @color, @color-hover, @bg-color, @bg-color-hover);
 }
 ```
 
