@@ -14,14 +14,6 @@ module.exports = function(grunt) {
         files: {
           './src/styles/css/styles.css': './src/styles/less/styles.less'
         },
-      },
-      dist: {
-        options: {
-          'compressed': true,
-        },
-        files: {
-          './dist/tricons.css': './src/styles/less/tricons.less'
-        }
       }
     },
 

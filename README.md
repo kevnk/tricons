@@ -3,14 +3,39 @@ Common (customizable) icons that can morph from one to another made with CSS; in
 
 ## Usage
 
-> For a full example, view `/src/index.html`
+> __TL;DR;__ for a full example, view `src/index.html` and `src/styles/less/styles.less`
 
-#### 1. Import the tricons mixin
-```less
-@import 'tricons';
+#### 1. Bower install 
+
+```bash
+$ bower install -S tricons
 ```
 
-#### 2. Create some customized tricon buttons with your less
+#### 2. Import the tricons mixin
+```less
+@import 'bower_components/tricons/tricons';
+
+// Optionally set the default tricon
+// NOTE: if you change default-tricon, be sure to add/remove it from the list of @tricons below
+@default-tricon: hamburger-menu;
+
+// Optionally remove unused icons from this list to slim down on your CSS
+@tricons: x, arrow-left, arrow-right, arrow-up, arrow-down, plus, minus, loading, caret-up, caret-down, caret-left, caret-right;
+
+// Optionally customize tricons default values
+@tricon-thickness: 2px;
+@tricon-min-width: 40px;
+@tricon-height: 40px;
+@tricon-pad-vert: 0;
+@tricon-pad-horz: 0;
+@tricon-color: #fff;
+@tricon-color-hover: #fff;
+@tricon-bg-color: #2A97EF;
+@tricon-bg-color-hover: saturate(lighten(#2A97EF, 5%), 5%);
+```
+
+
+#### 3. Create some customized tricon buttons with your less
 ```less
 .my-custom-tricon {
     // FYI, these are the defaults 
@@ -27,7 +52,7 @@ Common (customizable) icons that can morph from one to another made with CSS; in
 }
 ```
 
-#### 3. HTML Markup
+#### 4. HTML Markup
 ```html
 <a class="my-custom-tricon" href="#" data-tricon="hamburger-menu" data-tricon-toggle="x">
     <span></span>
@@ -44,7 +69,7 @@ Common (customizable) icons that can morph from one to another made with CSS; in
 
 __NOTE:__ if you want the text on the left of the icon, just move that element before the 3 empty spans
 
-#### 4. Javascript to toggle `data-tricon` attribute
+#### 5. Javascript to toggle `data-tricon` attribute
 
 Use the following or roll your own:
 ```js

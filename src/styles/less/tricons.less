@@ -1,3 +1,6 @@
+// If you change the default, be sure to add it to the list @tricons below
+@default-tricon: hamburger-menu;
+
 // Remove unused icons from this list to slim down on your CSS
 @tricons: x, arrow-left, arrow-right, arrow-up, arrow-down, plus, minus, loading, caret-up, caret-down, caret-left, caret-right;
 
@@ -70,9 +73,9 @@
     }
   }
 
-  // Set the default to the first in the list
-  .tricons(hamburger-menu, @min-dimension, @bar-thickness-max);
+  .tricons(@default-tricon, @min-dimension, @bar-thickness-max);
 
+  // Loop through all the tricons to set the styles for it
   .loop (@index) when (@index > 0) {
     @icon: e(extract(@tricons, @index));
     &[data-tricon="@{icon}"] {
