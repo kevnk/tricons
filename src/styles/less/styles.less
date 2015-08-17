@@ -1,6 +1,29 @@
 @import 'tricons';
 
 .tricon,
-.tricon-text {
-    background: #000;
+.tricon-text,
+#icon2 {
+  background: #000;
+}
+
+#icon2 {
+  .tricon(auto, 60px, 1px, #999, #fff, 10px, 20px);
+}
+
+// Example index.html styles
+
+.container {
+  width: 75%;
+  margin: 0 auto;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+hr {
+  border: none;
+  &:before {
+    content: '';
+    display: block;
+    border-top: 1px solid #eee;
+  }
 }

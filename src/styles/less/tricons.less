@@ -1,15 +1,17 @@
 .tricon,
 .tricon-text { .tricon(); }
 .tricon-text { width: auto; }
-
 @tricons: x, arrow-left, arrow-right, arrow-up, arrow-down, plus, minus, loading, caret-up, caret-down, caret-left, caret-right;
-.tricon (@width: 40px, @height: 40px, @thickness: 2px, @color: #fff, @color-hover: #fff) {
+
+.tricon (@width: 40px, @height: 40px, @thickness: 2px, @color: #fff, @color-hover: #fff, @pad-vert: 0, @pad-horz: 0) {
   @min-dimension: min(@height, @width);
   @bar-width: @min-dimension / 2;
   @bar-thickness-max: min(@min-dimension * 0.125, @thickness);
-  height: @height;
+  height: @height + @pad-vert * 2;
   width: @width;
   color: @color;
+  padding: @pad-vert @pad-horz;
+  box-sizing: border-box;
   display: inline-block;
   position: relative;
   text-align: center;
@@ -22,7 +24,7 @@
     height: @bar-thickness-max;
     width: @bar-width;
     background-color: @color;
-    left: @bar-width / 2;
+    left: @bar-width / 2 + @pad-horz;
     margin-top: @bar-thickness-max / -2;
     content: '';
     display: inline-block;
@@ -36,7 +38,7 @@
   // When text is first
   :not(:empty):first-child ~ :empty {
     left: auto;
-    right: @bar-width / 2;
+    right: @bar-width / 2 + @pad-horz;
   }
   :not(:empty) {
     font-size: @min-dimension * 0.475;
@@ -67,53 +69,83 @@
   .loop(length(@tricons));
 }
 .tricons(hamburger-menu, @min-dimension, @bar-thickness-max) {
-  :empty:nth-of-type(1) { transform: translate(0px, @min-dimension * -0.14) rotate(0) scale(1, 1); }
-  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(1, 1); }
-  :empty:nth-of-type(3) { transform: translate(0px, @min-dimension * 0.14) rotate(0) scale(1, 1); }
+  .bar1 { transform: translate(0px, @min-dimension * -0.14) rotate(0) scale(1, 1); }
+  .bar2 { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  .bar3 { transform: translate(0px, @min-dimension * 0.14) rotate(0) scale(1, 1); }
+  :empty:first-child, :empty:nth-child(2):nth-last-child(3) { .bar1; }
+  :empty:first-child + :empty, :empty:nth-child(2):nth-last-child(3) + :empty { .bar2; }
+  :empty:first-child + :empty + :empty, :empty:nth-child(2):nth-last-child(3) + :empty + :empty { .bar3; }
 }
 .tricons(arrow-left, @min-dimension, @bar-thickness) {
-  :empty:nth-of-type(1) { transform: translate(@min-dimension * -0.146 + @bar-thickness-max * -0.14, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
-  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(1, 1); }
-  :empty:nth-of-type(3) { transform: translate(@min-dimension * -0.146 + @bar-thickness-max * -0.14, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
+  .bar1 { transform: translate(@min-dimension * -0.146 + @bar-thickness-max * -0.14, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
+  .bar2 { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  .bar3 { transform: translate(@min-dimension * -0.146 + @bar-thickness-max * -0.14, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
+  :empty:first-child, :empty:nth-child(2):nth-last-child(3) { .bar1; }
+  :empty:first-child + :empty, :empty:nth-child(2):nth-last-child(3) + :empty { .bar2; }
+  :empty:first-child + :empty + :empty, :empty:nth-child(2):nth-last-child(3) + :empty + :empty { .bar3; }
 }
 .tricons(arrow-right, @min-dimension, @bar-thickness) {
-  :empty:nth-of-type(1) { transform: translate(@min-dimension * 0.146 + @bar-thickness-max * 0.14, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
-  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(1, 1); }
-  :empty:nth-of-type(3) { transform: translate(@min-dimension * 0.146 + @bar-thickness-max * 0.14, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
+  .bar1 { transform: translate(@min-dimension * 0.146 + @bar-thickness-max * 0.14, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
+  .bar2 { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  .bar3 { transform: translate(@min-dimension * 0.146 + @bar-thickness-max * 0.14, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
+  :empty:first-child, :empty:nth-child(2):nth-last-child(3) { .bar1; }
+  :empty:first-child + :empty, :empty:nth-child(2):nth-last-child(3) + :empty { .bar2; }
+  :empty:first-child + :empty + :empty, :empty:nth-child(2):nth-last-child(3) + :empty + :empty { .bar3; }
 }
 .tricons(arrow-up, @min-dimension, @bar-thickness) {
-  :empty:nth-of-type(1) { transform: translate(@min-dimension * -0.1055 - (@bar-thickness-max - 1) * -0.354, @min-dimension * -0.146 + @bar-thickness-max * -0.14) rotate(-45deg) scale(0.6, 1); }
-  :empty:nth-of-type(2) { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, @min-dimension * -0.146 + @bar-thickness-max * -0.14) rotate(45deg) scale(0.6, 1); }
-  :empty:nth-of-type(3) { transform: translate(0, 0) rotate(-90deg) scale(1, 1); }
+  .bar1 { transform: translate(@min-dimension * -0.1055 - (@bar-thickness-max - 1) * -0.354, @min-dimension * -0.146 + @bar-thickness-max * -0.14) rotate(-45deg) scale(0.6, 1); }
+  .bar2 { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, @min-dimension * -0.146 + @bar-thickness-max * -0.14) rotate(45deg) scale(0.6, 1); }
+  .bar3 { transform: translate(0, 0) rotate(-90deg) scale(1, 1); }
+  :empty:first-child, :empty:nth-child(2):nth-last-child(3) { .bar1; }
+  :empty:first-child + :empty, :empty:nth-child(2):nth-last-child(3) + :empty { .bar2; }
+  :empty:first-child + :empty + :empty, :empty:nth-child(2):nth-last-child(3) + :empty + :empty { .bar3; }
 }
 .tricons(arrow-down, @min-dimension, @bar-thickness) {
-  :empty:nth-of-type(1) { transform: translate(@min-dimension * -0.1055 - (@bar-thickness-max - 1) * -0.354, @min-dimension * 0.146 + @bar-thickness-max * 0.14) rotate(45deg) scale(0.6, 1); }
-  :empty:nth-of-type(2) { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, @min-dimension * 0.146 + @bar-thickness-max * 0.14) rotate(-45deg) scale(0.6, 1); }
-  :empty:nth-of-type(3) { transform: translate(0, 0) rotate(-90deg) scale(1, 1); }
+  .bar1 { transform: translate(@min-dimension * -0.1055 - (@bar-thickness-max - 1) * -0.354, @min-dimension * 0.146 + @bar-thickness-max * 0.14) rotate(45deg) scale(0.6, 1); }
+  .bar2 { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, @min-dimension * 0.146 + @bar-thickness-max * 0.14) rotate(-45deg) scale(0.6, 1); }
+  .bar3 { transform: translate(0, 0) rotate(-90deg) scale(1, 1); }
+  :empty:first-child, :empty:nth-child(2):nth-last-child(3) { .bar1; }
+  :empty:first-child + :empty, :empty:nth-child(2):nth-last-child(3) + :empty { .bar2; }
+  :empty:first-child + :empty + :empty, :empty:nth-child(2):nth-last-child(3) + :empty + :empty { .bar3; }
 }
 .tricons(x, @min-dimension, @bar-thickness) {
-  :empty:nth-of-type(1) { transform: translate(0, 0) rotate(45deg) scale(1.15, 1); }
-  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(0, 0); }
-  :empty:nth-of-type(3) { transform: translate(0, 0) rotate(-45deg) scale(1.15, 1); }
+  .bar1 { transform: translate(0, 0) rotate(45deg) scale(1.15, 1); }
+  .bar2 { transform: translate(0, 0) rotate(0) scale(0, 0); }
+  .bar3 { transform: translate(0, 0) rotate(-45deg) scale(1.15, 1); }
+  :empty:first-child, :empty:nth-child(2):nth-last-child(3) { .bar1; }
+  :empty:first-child + :empty, :empty:nth-child(2):nth-last-child(3) + :empty { .bar2; }
+  :empty:first-child + :empty + :empty, :empty:nth-child(2):nth-last-child(3) + :empty + :empty { .bar3; }
 }
 .tricons(plus, @min-dimension, @bar-thickness) {
-  :empty:nth-of-type(1) { transform: translate(0, 0) rotate(90deg) scale(1, 1); }
-  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(1, 1); }
-  :empty:nth-of-type(3) { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  .bar1 { transform: translate(0, 0) rotate(90deg) scale(1, 1); }
+  .bar2 { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  .bar3 { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  :empty:first-child, :empty:nth-child(2):nth-last-child(3) { .bar1; }
+  :empty:first-child + :empty, :empty:nth-child(2):nth-last-child(3) + :empty { .bar2; }
+  :empty:first-child + :empty + :empty, :empty:nth-child(2):nth-last-child(3) + :empty + :empty { .bar3; }
 }
 .tricons(minus, @min-dimension, @bar-thickness) {
-  :empty:nth-of-type(1) { transform: translate(0, 0) rotate(0) scale(1, 1); }
-  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(1, 1); }
-  :empty:nth-of-type(3) { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  .bar1 { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  .bar2 { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  .bar3 { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  :empty:first-child, :empty:nth-child(2):nth-last-child(3) { .bar1; }
+  :empty:first-child + :empty, :empty:nth-child(2):nth-last-child(3) + :empty { .bar2; }
+  :empty:first-child + :empty + :empty, :empty:nth-child(2):nth-last-child(3) + :empty + :empty { .bar3; }
 }
 .tricons(loading, @min-dimension, @bar-thickness) {
-  :empty:nth-of-type(1) { transform: translate(@min-dimension * -0.146, 0) rotate(90deg) scale(1, 1);  }
-  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(90deg) scale(1, 1); }
-  :empty:nth-of-type(3) { transform: translate(@min-dimension * 0.146, 0) rotate(90deg) scale(1, 1); }
+  .bar1 { transform: translate(@min-dimension * -0.146, 0) rotate(90deg) scale(1, 1); }
+  .bar2 { transform: translate(0, 0) rotate(90deg) scale(1, 1); }
+  .bar3 { transform: translate(@min-dimension * 0.146, 0) rotate(90deg) scale(1, 1); }
+  :empty:first-child, :empty:nth-child(2):nth-last-child(3) { .bar1; }
+  :empty:first-child + :empty, :empty:nth-child(2):nth-last-child(3) + :empty { .bar2; }
+  :empty:first-child + :empty + :empty, :empty:nth-child(2):nth-last-child(3) + :empty + :empty { .bar3; }
   &.animate {
-    :empty:nth-of-type(1) { animation: triconLoading1 1s infinite; animation-delay: 0ms;}
-    :empty:nth-of-type(2) { animation: triconLoading2 1s infinite; animation-delay: 150ms; }
-    :empty:nth-of-type(3) { animation: triconLoading3 1s infinite; animation-delay: 300ms; }
+    .animation1 { animation: triconLoading1 1s infinite; animation-delay: 0ms; }
+    .animation2 { animation: triconLoading2 1s infinite; animation-delay: 150ms; }
+    .animation3 { animation: triconLoading3 1s infinite; animation-delay: 300ms; }
+    :empty:first-child, :empty:nth-child(2):nth-last-child(3) { .animation1; }
+    :empty:first-child + :empty, :empty:nth-child(2):nth-last-child(3) + :empty { .animation2; }
+    :empty:first-child + :empty + :empty, :empty:nth-child(2):nth-last-child(3) + :empty + :empty { .animation3; }
   }
   @keyframes triconLoading1 {
     0% { transform: translate(@min-dimension * -0.146, 0) rotate(90deg) scale(1, 1); }
@@ -132,22 +164,34 @@
   }
 }
 .tricons(caret-up, @min-dimension, @bar-thickness) {
-  :empty:nth-of-type(1) { transform: translate(@min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354, 0) rotate(-45deg) scale(0.6, 1); }
-  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(0, 0); }
-  :empty:nth-of-type(3) { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, 0) rotate(45deg) scale(0.6, 1); }
+  .bar1 { transform: translate(@min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354, 0) rotate(-45deg) scale(0.6, 1); }
+  .bar2 { transform: translate(0, 0) rotate(0) scale(0, 0); }
+  .bar3 { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, 0) rotate(45deg) scale(0.6, 1); }
+  :empty:first-child, :empty:nth-child(2):nth-last-child(3) { .bar1; }
+  :empty:first-child + :empty, :empty:nth-child(2):nth-last-child(3) + :empty { .bar2; }
+  :empty:first-child + :empty + :empty, :empty:nth-child(2):nth-last-child(3) + :empty + :empty { .bar3; }
 }
 .tricons(caret-down, @min-dimension, @bar-thickness) {
-  :empty:nth-of-type(1) { transform: translate(@min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354, 0) rotate(45deg) scale(0.6, 1); }
-  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(0, 0); }
-  :empty:nth-of-type(3) { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, 0) rotate(-45deg) scale(0.6, 1); }
+  .bar1 { transform: translate(@min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354, 0) rotate(45deg) scale(0.6, 1); }
+  .bar2 { transform: translate(0, 0) rotate(0) scale(0, 0); }
+  .bar3 { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, 0) rotate(-45deg) scale(0.6, 1); }
+  :empty:first-child, :empty:nth-child(2):nth-last-child(3) { .bar1; }
+  :empty:first-child + :empty, :empty:nth-child(2):nth-last-child(3) + :empty { .bar2; }
+  :empty:first-child + :empty + :empty, :empty:nth-child(2):nth-last-child(3) + :empty + :empty { .bar3; }
 }
 .tricons(caret-left, @min-dimension, @bar-thickness) {
-  :empty:nth-of-type(1) { transform: translate(0, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
-  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(0, 0); }
-  :empty:nth-of-type(3) { transform: translate(0, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
+  .bar1 { transform: translate(0, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
+  .bar2 { transform: translate(0, 0) rotate(0) scale(0, 0); }
+  .bar3 { transform: translate(0, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
+  :empty:first-child, :empty:nth-child(2):nth-last-child(3) { .bar1; }
+  :empty:first-child + :empty, :empty:nth-child(2):nth-last-child(3) + :empty { .bar2; }
+  :empty:first-child + :empty + :empty, :empty:nth-child(2):nth-last-child(3) + :empty + :empty { .bar3; }
 }
 .tricons(caret-right, @min-dimension, @bar-thickness) {
-  :empty:nth-of-type(1) { transform: translate(0, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
-  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(0, 0); }
-  :empty:nth-of-type(3) { transform: translate(0, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
+  .bar1 { transform: translate(0, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
+  .bar2 { transform: translate(0, 0) rotate(0) scale(0, 0); }
+  .bar3 { transform: translate(0, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
+  :empty:first-child, :empty:nth-child(2):nth-last-child(3) { .bar1; }
+  :empty:first-child + :empty, :empty:nth-child(2):nth-last-child(3) + :empty { .bar2; }
+  :empty:first-child + :empty + :empty, :empty:nth-child(2):nth-last-child(3) + :empty + :empty { .bar3; }
 }
