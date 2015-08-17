@@ -39,7 +39,6 @@
     right: @bar-width / 2;
   }
   :not(:empty) {
-    right: @bar-width / 2;
     font-size: @min-dimension * 0.475;
     line-height: @height;
     padding: 0 @bar-width * 0.5;
@@ -68,55 +67,55 @@
   .loop(length(@tricons));
 }
 .tricons(hamburger-menu, @min-dimension, @bar-thickness-max) {
-  :empty { transform: translate(0px, @min-dimension * -0.14) rotate(0) scale(1, 1); }
-  :empty { transform: translate(0, 0) rotate(0) scale(1, 1); }
-  :empty { transform: translate(0px, @min-dimension * 0.14) rotate(0) scale(1, 1); }
+  :empty:nth-of-type(1) { transform: translate(0px, @min-dimension * -0.14) rotate(0) scale(1, 1); }
+  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  :empty:nth-of-type(3) { transform: translate(0px, @min-dimension * 0.14) rotate(0) scale(1, 1); }
 }
 .tricons(arrow-left, @min-dimension, @bar-thickness) {
-  :empty { transform: translate(@min-dimension * -0.146 + @bar-thickness-max * -0.14, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
-  :empty { transform: translate(0, 0) rotate(0) scale(1, 1); }
-  :empty { transform: translate(@min-dimension * -0.146 + @bar-thickness-max * -0.14, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
+  :empty:nth-of-type(1) { transform: translate(@min-dimension * -0.146 + @bar-thickness-max * -0.14, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
+  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  :empty:nth-of-type(3) { transform: translate(@min-dimension * -0.146 + @bar-thickness-max * -0.14, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
 }
 .tricons(arrow-right, @min-dimension, @bar-thickness) {
-  :empty { transform: translate(@min-dimension * 0.146 + @bar-thickness-max * 0.14, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
-  :empty { transform: translate(0, 0) rotate(0) scale(1, 1); }
-  :empty { transform: translate(@min-dimension * 0.146 + @bar-thickness-max * 0.14, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
+  :empty:nth-of-type(1) { transform: translate(@min-dimension * 0.146 + @bar-thickness-max * 0.14, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
+  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  :empty:nth-of-type(3) { transform: translate(@min-dimension * 0.146 + @bar-thickness-max * 0.14, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
 }
 .tricons(arrow-up, @min-dimension, @bar-thickness) {
-  :empty { transform: translate(@min-dimension * -0.1055 - (@bar-thickness-max - 1) * -0.354, @min-dimension * -0.146 + @bar-thickness-max * -0.14) rotate(-45deg) scale(0.6, 1); }
-  :empty { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, @min-dimension * -0.146 + @bar-thickness-max * -0.14) rotate(45deg) scale(0.6, 1); }
-  :empty { transform: translate(0, 0) rotate(-90deg) scale(1, 1); }
+  :empty:nth-of-type(1) { transform: translate(@min-dimension * -0.1055 - (@bar-thickness-max - 1) * -0.354, @min-dimension * -0.146 + @bar-thickness-max * -0.14) rotate(-45deg) scale(0.6, 1); }
+  :empty:nth-of-type(2) { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, @min-dimension * -0.146 + @bar-thickness-max * -0.14) rotate(45deg) scale(0.6, 1); }
+  :empty:nth-of-type(3) { transform: translate(0, 0) rotate(-90deg) scale(1, 1); }
 }
 .tricons(arrow-down, @min-dimension, @bar-thickness) {
-  :empty { transform: translate(@min-dimension * -0.1055 - (@bar-thickness-max - 1) * -0.354, @min-dimension * 0.146 + @bar-thickness-max * 0.14) rotate(45deg) scale(0.6, 1); }
-  :empty { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, @min-dimension * 0.146 + @bar-thickness-max * 0.14) rotate(-45deg) scale(0.6, 1); }
-  :empty { transform: translate(0, 0) rotate(-90deg) scale(1, 1); }
+  :empty:nth-of-type(1) { transform: translate(@min-dimension * -0.1055 - (@bar-thickness-max - 1) * -0.354, @min-dimension * 0.146 + @bar-thickness-max * 0.14) rotate(45deg) scale(0.6, 1); }
+  :empty:nth-of-type(2) { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, @min-dimension * 0.146 + @bar-thickness-max * 0.14) rotate(-45deg) scale(0.6, 1); }
+  :empty:nth-of-type(3) { transform: translate(0, 0) rotate(-90deg) scale(1, 1); }
 }
 .tricons(x, @min-dimension, @bar-thickness) {
-  :empty { transform: translate(0, 0) rotate(45deg) scale(1.15, 1); }
-  :empty { transform: translate(0, 0) rotate(0) scale(0, 0); }
-  :empty { transform: translate(0, 0) rotate(-45deg) scale(1.15, 1); }
+  :empty:nth-of-type(1) { transform: translate(0, 0) rotate(45deg) scale(1.15, 1); }
+  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(0, 0); }
+  :empty:nth-of-type(3) { transform: translate(0, 0) rotate(-45deg) scale(1.15, 1); }
 }
 .tricons(plus, @min-dimension, @bar-thickness) {
-  :empty { transform: translate(0, 0) rotate(90deg) scale(1, 1); }
-  :empty { transform: translate(0, 0) rotate(0) scale(1, 1); }
-  :empty { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  :empty:nth-of-type(1) { transform: translate(0, 0) rotate(90deg) scale(1, 1); }
+  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  :empty:nth-of-type(3) { transform: translate(0, 0) rotate(0) scale(1, 1); }
 }
 .tricons(minus, @min-dimension, @bar-thickness) {
-  :empty { transform: translate(0, 0) rotate(0) scale(1, 1); }
-  :empty { transform: translate(0, 0) rotate(0) scale(1, 1); }
-  :empty { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  :empty:nth-of-type(1) { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  :empty:nth-of-type(3) { transform: translate(0, 0) rotate(0) scale(1, 1); }
 }
 .tricons(loading, @min-dimension, @bar-thickness) {
-  :empty { transform: translate(@min-dimension * -0.146, 0) rotate(0deg) scale(1, 1);  }
-  :empty { transform: translate(0, 0) rotate(90deg) scale(1, 1); }
-  :empty { transform: translate(@min-dimension * 0.146, 0) rotate(0deg) scale(1, 1); }
+  :empty:nth-of-type(1) { transform: translate(@min-dimension * -0.146, 0) rotate(90deg) scale(1, 1);  }
+  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(90deg) scale(1, 1); }
+  :empty:nth-of-type(3) { transform: translate(@min-dimension * 0.146, 0) rotate(90deg) scale(1, 1); }
   &.animate {
-    :empty { animation: triconLoading1 1s infinite; animation-delay: 0ms;}
-    &:after { animation: triconLoading2 1s infinite; animation-delay: 150ms; }
-    :empty { animation: triconLoading3 1s infinite; animation-delay: 300ms; }
+    :empty:nth-of-type(1) { animation: triconLoading1 1s infinite; animation-delay: 0ms;}
+    :empty:nth-of-type(2) { animation: triconLoading2 1s infinite; animation-delay: 150ms; }
+    :empty:nth-of-type(3) { animation: triconLoading3 1s infinite; animation-delay: 300ms; }
   }
- :emptys triconLoading1 {
+  @keyframes triconLoading1 {
     0% { transform: translate(@min-dimension * -0.146, 0) rotate(90deg) scale(1, 1); }
     15% { transform: translate(@min-dimension * -0.146, 0) rotate(90deg) scale(0.4, 1); }
     100% { transform: translate(@min-dimension * -0.146, 0) rotate(90deg) scale(1, 1); }
@@ -133,22 +132,22 @@
   }
 }
 .tricons(caret-up, @min-dimension, @bar-thickness) {
-  :empty { transform: translate(@min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354, 0) rotate(-45deg) scale(0.6, 1); }
-  :empty { transform: translate(0, 0) rotate(0) scale(0, 0); }
-  :empty { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, 0) rotate(45deg) scale(0.6, 1); }
+  :empty:nth-of-type(1) { transform: translate(@min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354, 0) rotate(-45deg) scale(0.6, 1); }
+  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(0, 0); }
+  :empty:nth-of-type(3) { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, 0) rotate(45deg) scale(0.6, 1); }
 }
 .tricons(caret-down, @min-dimension, @bar-thickness) {
-  :empty { transform: translate(@min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354, 0) rotate(45deg) scale(0.6, 1); }
-  :empty { transform: translate(0, 0) rotate(0) scale(0, 0); }
-  :empty { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, 0) rotate(-45deg) scale(0.6, 1); }
+  :empty:nth-of-type(1) { transform: translate(@min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354, 0) rotate(45deg) scale(0.6, 1); }
+  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(0, 0); }
+  :empty:nth-of-type(3) { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, 0) rotate(-45deg) scale(0.6, 1); }
 }
 .tricons(caret-left, @min-dimension, @bar-thickness) {
-  :empty { transform: translate(0, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
-  :empty { transform: translate(0, 0) rotate(0) scale(0, 0); }
-  :empty { transform: translate(0, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
+  :empty:nth-of-type(1) { transform: translate(0, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
+  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(0, 0); }
+  :empty:nth-of-type(3) { transform: translate(0, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
 }
 .tricons(caret-right, @min-dimension, @bar-thickness) {
-  :empty { transform: translate(0, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
-  :empty { transform: translate(0, 0) rotate(0) scale(0, 0); }
-  :empty { transform: translate(0, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
+  :empty:nth-of-type(1) { transform: translate(0, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
+  :empty:nth-of-type(2) { transform: translate(0, 0) rotate(0) scale(0, 0); }
+  :empty:nth-of-type(3) { transform: translate(0, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
 }
