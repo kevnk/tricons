@@ -1,7 +1,7 @@
 .tricons(loading, @min-dimension, @bar-thickness) {
-  @transform1: translate(@min-dimension * -0.146, 0) rotate(90deg) scale(1, 1);
+  @transform1: translate(@min-dimension * -0.1, 0) rotate(90deg) scale(1, 1);
   @transform2: translate(0, 0) rotate(90deg) scale(1, 1);
-  @transform3: translate(@min-dimension * 0.146, 0) rotate(90deg) scale(1, 1);
+  @transform3: translate(@min-dimension * 0.1, 0) rotate(90deg) scale(1, 1);
 
   :empty:first-child, :empty:nth-child(2):nth-last-child(3) { transform: @transform1; }
   :empty:first-child + :empty, :empty:nth-child(2):nth-last-child(3) + :empty{ transform: @transform2; }
@@ -14,9 +14,9 @@
   }
 
   @keyframes triconLoading1 {
-    0% { transform: translate(@min-dimension * -0.146, 0) rotate(90deg) scale(1, 1); }
-    15% { transform: translate(@min-dimension * -0.146, 0) rotate(90deg) scale(0.4, 1); }
-    100% { transform: translate(@min-dimension * -0.146, 0) rotate(90deg) scale(1, 1); }
+    0% { transform: translate(@min-dimension * -0.1, 0) rotate(90deg) scale(1, 1); }
+    15% { transform: translate(@min-dimension * -0.1, 0) rotate(90deg) scale(0.4, 1); }
+    100% { transform: translate(@min-dimension * -0.1, 0) rotate(90deg) scale(1, 1); }
   }
 
   @keyframes triconLoading2 {
@@ -26,8 +26,8 @@
   }
 
   @keyframes triconLoading3 {
-    0% { transform: translate(@min-dimension * 0.146, 0) rotate(90deg) scale(1, 1); }
-    15% { transform: translate(@min-dimension * 0.146, 0) rotate(90deg) scale(0.4, 1); }
-    100% { transform: translate(@min-dimension * 0.146, 0) rotate(90deg) scale(1, 1); }
+    0% { transform: translate(@min-dimension * 0.1, 0) rotate(90deg) scale(1, 1); }
+    15% { transform: translate(@min-dimension * 0.1, 0) rotate(90deg) scale(0.4, 1); }
+    100% { transform: translate(@min-dimension * 0.1, 0) rotate(90deg) scale(1, 1); }
   }
 }
