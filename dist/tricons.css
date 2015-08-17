@@ -13,12 +13,8 @@
 .tricon-text:hover {
   color: #ffffff;
 }
-.tricon:before,
-.tricon-text:before,
 .tricon :empty,
-.tricon-text :empty,
-.tricon:after,
-.tricon-text:after {
+.tricon-text :empty {
   height: 2px;
   width: 20px;
   background-color: #ffffff;
@@ -30,20 +26,12 @@
   top: 50%;
   transition: all 200ms ease;
 }
-.tricon:hover:before,
-.tricon-text:hover:before,
 .tricon:hover :empty,
-.tricon-text:hover :empty,
-.tricon:hover:after,
-.tricon-text:hover:after {
+.tricon-text:hover :empty {
   background-color: #ffffff;
 }
-.tricon :empty,
-.tricon-text :empty {
-  left: 10px;
-}
-.tricon :empty:last-child,
-.tricon-text :empty:last-child {
+.tricon :not(:empty):first-child ~ :empty,
+.tricon-text :not(:empty):first-child ~ :empty {
   left: auto;
   right: 10px;
 }
@@ -65,8 +53,8 @@
 .tricon-text :not(:empty):first-child {
   margin-right: 30px;
 }
-.tricon:before,
-.tricon-text:before {
+.tricon :empty,
+.tricon-text :empty {
   -webkit-transform: translate(0px, -5.6px) rotate(0) scale(1, 1);
           transform: translate(0px, -5.6px) rotate(0) scale(1, 1);
 }
@@ -75,13 +63,13 @@
   -webkit-transform: translate(0, 0) rotate(0) scale(1, 1);
           transform: translate(0, 0) rotate(0) scale(1, 1);
 }
-.tricon:after,
-.tricon-text:after {
+.tricon :empty,
+.tricon-text :empty {
   -webkit-transform: translate(0px, 5.6px) rotate(0) scale(1, 1);
           transform: translate(0px, 5.6px) rotate(0) scale(1, 1);
 }
-.tricon[data-tricon="caret-right"]:before,
-.tricon-text[data-tricon="caret-right"]:before {
+.tricon[data-tricon="caret-right"] :empty,
+.tricon-text[data-tricon="caret-right"] :empty {
   -webkit-transform: translate(0, -3.866px) rotate(45deg) scale(0.6, 1);
           transform: translate(0, -3.866px) rotate(45deg) scale(0.6, 1);
 }
@@ -90,13 +78,13 @@
   -webkit-transform: translate(0, 0) rotate(0) scale(0, 0);
           transform: translate(0, 0) rotate(0) scale(0, 0);
 }
-.tricon[data-tricon="caret-right"]:after,
-.tricon-text[data-tricon="caret-right"]:after {
+.tricon[data-tricon="caret-right"] :empty,
+.tricon-text[data-tricon="caret-right"] :empty {
   -webkit-transform: translate(0, 3.866px) rotate(-45deg) scale(0.6, 1);
           transform: translate(0, 3.866px) rotate(-45deg) scale(0.6, 1);
 }
-.tricon[data-tricon="caret-left"]:before,
-.tricon-text[data-tricon="caret-left"]:before {
+.tricon[data-tricon="caret-left"] :empty,
+.tricon-text[data-tricon="caret-left"] :empty {
   -webkit-transform: translate(0, -3.866px) rotate(-45deg) scale(0.6, 1);
           transform: translate(0, -3.866px) rotate(-45deg) scale(0.6, 1);
 }
@@ -105,13 +93,13 @@
   -webkit-transform: translate(0, 0) rotate(0) scale(0, 0);
           transform: translate(0, 0) rotate(0) scale(0, 0);
 }
-.tricon[data-tricon="caret-left"]:after,
-.tricon-text[data-tricon="caret-left"]:after {
+.tricon[data-tricon="caret-left"] :empty,
+.tricon-text[data-tricon="caret-left"] :empty {
   -webkit-transform: translate(0, 3.866px) rotate(45deg) scale(0.6, 1);
           transform: translate(0, 3.866px) rotate(45deg) scale(0.6, 1);
 }
-.tricon[data-tricon="caret-down"]:before,
-.tricon-text[data-tricon="caret-down"]:before {
+.tricon[data-tricon="caret-down"] :empty,
+.tricon-text[data-tricon="caret-down"] :empty {
   -webkit-transform: translate(-3.866px, 0) rotate(45deg) scale(0.6, 1);
           transform: translate(-3.866px, 0) rotate(45deg) scale(0.6, 1);
 }
@@ -120,13 +108,13 @@
   -webkit-transform: translate(0, 0) rotate(0) scale(0, 0);
           transform: translate(0, 0) rotate(0) scale(0, 0);
 }
-.tricon[data-tricon="caret-down"]:after,
-.tricon-text[data-tricon="caret-down"]:after {
+.tricon[data-tricon="caret-down"] :empty,
+.tricon-text[data-tricon="caret-down"] :empty {
   -webkit-transform: translate(3.866px, 0) rotate(-45deg) scale(0.6, 1);
           transform: translate(3.866px, 0) rotate(-45deg) scale(0.6, 1);
 }
-.tricon[data-tricon="caret-up"]:before,
-.tricon-text[data-tricon="caret-up"]:before {
+.tricon[data-tricon="caret-up"] :empty,
+.tricon-text[data-tricon="caret-up"] :empty {
   -webkit-transform: translate(-3.866px, 0) rotate(-45deg) scale(0.6, 1);
           transform: translate(-3.866px, 0) rotate(-45deg) scale(0.6, 1);
 }
@@ -135,13 +123,13 @@
   -webkit-transform: translate(0, 0) rotate(0) scale(0, 0);
           transform: translate(0, 0) rotate(0) scale(0, 0);
 }
-.tricon[data-tricon="caret-up"]:after,
-.tricon-text[data-tricon="caret-up"]:after {
+.tricon[data-tricon="caret-up"] :empty,
+.tricon-text[data-tricon="caret-up"] :empty {
   -webkit-transform: translate(3.866px, 0) rotate(45deg) scale(0.6, 1);
           transform: translate(3.866px, 0) rotate(45deg) scale(0.6, 1);
 }
-.tricon[data-tricon="loading"]:before,
-.tricon-text[data-tricon="loading"]:before {
+.tricon[data-tricon="loading"] :empty,
+.tricon-text[data-tricon="loading"] :empty {
   -webkit-transform: translate(-5.84px, 0) rotate(0deg) scale(1, 1);
           transform: translate(-5.84px, 0) rotate(0deg) scale(1, 1);
 }
@@ -150,8 +138,8 @@
   -webkit-transform: translate(0, 0) rotate(90deg) scale(1, 1);
           transform: translate(0, 0) rotate(90deg) scale(1, 1);
 }
-.tricon[data-tricon="loading"]:after,
-.tricon-text[data-tricon="loading"]:after {
+.tricon[data-tricon="loading"] :empty,
+.tricon-text[data-tricon="loading"] :empty {
   -webkit-transform: translate(5.84px, 0) rotate(0deg) scale(1, 1);
           transform: translate(5.84px, 0) rotate(0deg) scale(1, 1);
 }
@@ -169,40 +157,27 @@
   -webkit-animation-delay: 150ms;
           animation-delay: 150ms;
 }
-.tricon[data-tricon="loading"].animate:before,
-.tricon-text[data-tricon="loading"].animate:before {
+.tricon[data-tricon="loading"].animate :empty,
+.tricon-text[data-tricon="loading"].animate :empty {
   -webkit-animation: triconLoading3 1s infinite;
           animation: triconLoading3 1s infinite;
   -webkit-animation-delay: 300ms;
           animation-delay: 300ms;
 }
-@-webkit-keyframes triconLoading1 {
-  0% {
-    -webkit-transform: translate(-5.84px, 0) rotate(90deg) scale(1, 1);
-            transform: translate(-5.84px, 0) rotate(90deg) scale(1, 1);
-  }
-  15% {
-    -webkit-transform: translate(-5.84px, 0) rotate(90deg) scale(0.4, 1);
-            transform: translate(-5.84px, 0) rotate(90deg) scale(0.4, 1);
-  }
-  100% {
-    -webkit-transform: translate(-5.84px, 0) rotate(90deg) scale(1, 1);
-            transform: translate(-5.84px, 0) rotate(90deg) scale(1, 1);
-  }
+.tricon[data-tricon="loading"] :emptys triconLoading1 0%,
+.tricon-text[data-tricon="loading"] :emptys triconLoading1 0% {
+  -webkit-transform: translate(-5.84px, 0) rotate(90deg) scale(1, 1);
+          transform: translate(-5.84px, 0) rotate(90deg) scale(1, 1);
 }
-@keyframes triconLoading1 {
-  0% {
-    -webkit-transform: translate(-5.84px, 0) rotate(90deg) scale(1, 1);
-            transform: translate(-5.84px, 0) rotate(90deg) scale(1, 1);
-  }
-  15% {
-    -webkit-transform: translate(-5.84px, 0) rotate(90deg) scale(0.4, 1);
-            transform: translate(-5.84px, 0) rotate(90deg) scale(0.4, 1);
-  }
-  100% {
-    -webkit-transform: translate(-5.84px, 0) rotate(90deg) scale(1, 1);
-            transform: translate(-5.84px, 0) rotate(90deg) scale(1, 1);
-  }
+.tricon[data-tricon="loading"] :emptys triconLoading1 15%,
+.tricon-text[data-tricon="loading"] :emptys triconLoading1 15% {
+  -webkit-transform: translate(-5.84px, 0) rotate(90deg) scale(0.4, 1);
+          transform: translate(-5.84px, 0) rotate(90deg) scale(0.4, 1);
+}
+.tricon[data-tricon="loading"] :emptys triconLoading1 100%,
+.tricon-text[data-tricon="loading"] :emptys triconLoading1 100% {
+  -webkit-transform: translate(-5.84px, 0) rotate(90deg) scale(1, 1);
+          transform: translate(-5.84px, 0) rotate(90deg) scale(1, 1);
 }
 @-webkit-keyframes triconLoading2 {
   0% {
@@ -260,8 +235,8 @@
             transform: translate(5.84px, 0) rotate(90deg) scale(1, 1);
   }
 }
-.tricon[data-tricon="minus"]:before,
-.tricon-text[data-tricon="minus"]:before {
+.tricon[data-tricon="minus"] :empty,
+.tricon-text[data-tricon="minus"] :empty {
   -webkit-transform: translate(0, 0) rotate(0) scale(1, 1);
           transform: translate(0, 0) rotate(0) scale(1, 1);
 }
@@ -270,13 +245,13 @@
   -webkit-transform: translate(0, 0) rotate(0) scale(1, 1);
           transform: translate(0, 0) rotate(0) scale(1, 1);
 }
-.tricon[data-tricon="minus"]:after,
-.tricon-text[data-tricon="minus"]:after {
+.tricon[data-tricon="minus"] :empty,
+.tricon-text[data-tricon="minus"] :empty {
   -webkit-transform: translate(0, 0) rotate(0) scale(1, 1);
           transform: translate(0, 0) rotate(0) scale(1, 1);
 }
-.tricon[data-tricon="plus"]:before,
-.tricon-text[data-tricon="plus"]:before {
+.tricon[data-tricon="plus"] :empty,
+.tricon-text[data-tricon="plus"] :empty {
   -webkit-transform: translate(0, 0) rotate(90deg) scale(1, 1);
           transform: translate(0, 0) rotate(90deg) scale(1, 1);
 }
@@ -285,13 +260,13 @@
   -webkit-transform: translate(0, 0) rotate(0) scale(1, 1);
           transform: translate(0, 0) rotate(0) scale(1, 1);
 }
-.tricon[data-tricon="plus"]:after,
-.tricon-text[data-tricon="plus"]:after {
+.tricon[data-tricon="plus"] :empty,
+.tricon-text[data-tricon="plus"] :empty {
   -webkit-transform: translate(0, 0) rotate(0) scale(1, 1);
           transform: translate(0, 0) rotate(0) scale(1, 1);
 }
-.tricon[data-tricon="arrow-down"]:before,
-.tricon-text[data-tricon="arrow-down"]:before {
+.tricon[data-tricon="arrow-down"] :empty,
+.tricon-text[data-tricon="arrow-down"] :empty {
   -webkit-transform: translate(-3.866px, 6.12px) rotate(45deg) scale(0.6, 1);
           transform: translate(-3.866px, 6.12px) rotate(45deg) scale(0.6, 1);
 }
@@ -300,13 +275,13 @@
   -webkit-transform: translate(3.866px, 6.12px) rotate(-45deg) scale(0.6, 1);
           transform: translate(3.866px, 6.12px) rotate(-45deg) scale(0.6, 1);
 }
-.tricon[data-tricon="arrow-down"]:after,
-.tricon-text[data-tricon="arrow-down"]:after {
+.tricon[data-tricon="arrow-down"] :empty,
+.tricon-text[data-tricon="arrow-down"] :empty {
   -webkit-transform: translate(0, 0) rotate(-90deg) scale(1, 1);
           transform: translate(0, 0) rotate(-90deg) scale(1, 1);
 }
-.tricon[data-tricon="arrow-up"]:before,
-.tricon-text[data-tricon="arrow-up"]:before {
+.tricon[data-tricon="arrow-up"] :empty,
+.tricon-text[data-tricon="arrow-up"] :empty {
   -webkit-transform: translate(-3.866px, -6.12px) rotate(-45deg) scale(0.6, 1);
           transform: translate(-3.866px, -6.12px) rotate(-45deg) scale(0.6, 1);
 }
@@ -315,13 +290,13 @@
   -webkit-transform: translate(3.866px, -6.12px) rotate(45deg) scale(0.6, 1);
           transform: translate(3.866px, -6.12px) rotate(45deg) scale(0.6, 1);
 }
-.tricon[data-tricon="arrow-up"]:after,
-.tricon-text[data-tricon="arrow-up"]:after {
+.tricon[data-tricon="arrow-up"] :empty,
+.tricon-text[data-tricon="arrow-up"] :empty {
   -webkit-transform: translate(0, 0) rotate(-90deg) scale(1, 1);
           transform: translate(0, 0) rotate(-90deg) scale(1, 1);
 }
-.tricon[data-tricon="arrow-right"]:before,
-.tricon-text[data-tricon="arrow-right"]:before {
+.tricon[data-tricon="arrow-right"] :empty,
+.tricon-text[data-tricon="arrow-right"] :empty {
   -webkit-transform: translate(6.12px, -3.866px) rotate(45deg) scale(0.6, 1);
           transform: translate(6.12px, -3.866px) rotate(45deg) scale(0.6, 1);
 }
@@ -330,13 +305,13 @@
   -webkit-transform: translate(0, 0) rotate(0) scale(1, 1);
           transform: translate(0, 0) rotate(0) scale(1, 1);
 }
-.tricon[data-tricon="arrow-right"]:after,
-.tricon-text[data-tricon="arrow-right"]:after {
+.tricon[data-tricon="arrow-right"] :empty,
+.tricon-text[data-tricon="arrow-right"] :empty {
   -webkit-transform: translate(6.12px, 3.866px) rotate(-45deg) scale(0.6, 1);
           transform: translate(6.12px, 3.866px) rotate(-45deg) scale(0.6, 1);
 }
-.tricon[data-tricon="arrow-left"]:before,
-.tricon-text[data-tricon="arrow-left"]:before {
+.tricon[data-tricon="arrow-left"] :empty,
+.tricon-text[data-tricon="arrow-left"] :empty {
   -webkit-transform: translate(-6.12px, -3.866px) rotate(-45deg) scale(0.6, 1);
           transform: translate(-6.12px, -3.866px) rotate(-45deg) scale(0.6, 1);
 }
@@ -345,13 +320,13 @@
   -webkit-transform: translate(0, 0) rotate(0) scale(1, 1);
           transform: translate(0, 0) rotate(0) scale(1, 1);
 }
-.tricon[data-tricon="arrow-left"]:after,
-.tricon-text[data-tricon="arrow-left"]:after {
+.tricon[data-tricon="arrow-left"] :empty,
+.tricon-text[data-tricon="arrow-left"] :empty {
   -webkit-transform: translate(-6.12px, 3.866px) rotate(45deg) scale(0.6, 1);
           transform: translate(-6.12px, 3.866px) rotate(45deg) scale(0.6, 1);
 }
-.tricon[data-tricon="x"]:before,
-.tricon-text[data-tricon="x"]:before {
+.tricon[data-tricon="x"] :empty,
+.tricon-text[data-tricon="x"] :empty {
   -webkit-transform: translate(0, 0) rotate(45deg) scale(1.15, 1);
           transform: translate(0, 0) rotate(45deg) scale(1.15, 1);
 }
@@ -360,8 +335,8 @@
   -webkit-transform: translate(0, 0) rotate(0) scale(0, 0);
           transform: translate(0, 0) rotate(0) scale(0, 0);
 }
-.tricon[data-tricon="x"]:after,
-.tricon-text[data-tricon="x"]:after {
+.tricon[data-tricon="x"] :empty,
+.tricon-text[data-tricon="x"] :empty {
   -webkit-transform: translate(0, 0) rotate(-45deg) scale(1.15, 1);
           transform: translate(0, 0) rotate(-45deg) scale(1.15, 1);
 }
