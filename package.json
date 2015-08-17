@@ -1,7 +1,8 @@
 {
   "name": "tricons",
   "version": "1.0.0",
-  "description": "Common icons that can morph from one to another made with CSS; inspired by SVG animated icons.",
+  "description": "Common (customizable) icons that can morph from one to another made with CSS; inspired by SVG animated icons (but these use no SVG; just CSS).
+",
   "main": "null",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
