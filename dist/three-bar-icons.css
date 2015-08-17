@@ -1,0 +1,17 @@
+.tricon {
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 0;
+  transition: all 200ms ease;
+}
+.tricon .bar {
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  transition: all 200ms ease;
+}
+.tricon .text {
+  right: auto;
+  display: inline-block;
+}

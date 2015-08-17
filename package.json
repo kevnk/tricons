@@ -1,0 +1,34 @@
+{
+  "name": "tricons",
+  "version": "1.0.0",
+  "description": "Common icons that can morph from one to another made with CSS; inspired by SVG animated icons.",
+  "main": "null",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevnk/tricons.git"
+  },
+  "keywords": [
+    "css",
+    "icons",
+    "animated",
+    "svg"
+  ],
+  "author": "Kevin Kirchner <hello@kevnk.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kevnk/tricons/issues"
+  },
+  "homepage": "https://github.com/kevnk/tricons#readme",
+  "devDependencies": {
+    "autoprefixer-core": "^5.2.1",
+    "grunt": "^0.4.5",
+    "grunt-contrib-less": "^1.0.1",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-less-to-sass": "0.0.10",
+    "grunt-postcss": "^0.5.5",
+    "load-grunt-tasks": "^3.2.0"
+  }
+}

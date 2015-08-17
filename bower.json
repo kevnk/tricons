@@ -1,0 +1,24 @@
+{
+  "name": "tricons",
+  "version": "1.0.0",
+  "homepage": "https://github.com/kevnk/tricons",
+  "authors": [
+    "Kevin Kirchner <hello@kevnk.com>"
+  ],
+  "description": "Common icons that can morph from one to another made with CSS; inspired by SVG animated icons.",
+  "main": "dist/three-bars-icon.css",
+  "keywords": [
+    "css",
+    "icons",
+    "animated",
+    "svg"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

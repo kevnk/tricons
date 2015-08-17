@@ -1,0 +1,160 @@
+.tricon,
+.tricon-text { .tricon(); }
+.tricon-text { width: auto; }
+
+@tricons: x, arrow-left, arrow-right, arrow-up, arrow-down, plus, minus, loading, caret-up, caret-down, caret-left, caret-right;
+.tricon (@width: 40px, @height: 40px, @thickness: 2px, @color: #fff, @color-hover: #fff) {
+  @min-dimension: min(@height, @width);
+  @bar-width: @min-dimension / 2;
+  @bar-thickness-max: min(@min-dimension * 0.125, @thickness);
+  height: @height;
+  width: @width;
+  color: @color;
+  display: inline-block;
+  position: relative;
+  text-align: center;
+  font-size: 0;
+  transition: all 200ms ease;
+  &:hover {
+    color: @color-hover;
+  }
+  &:before,
+  :empty,
+  &:after {
+    height: @bar-thickness-max;
+    width: @bar-width;
+    background-color: @color;
+    left: @bar-width / 2;
+    margin-top: @bar-thickness-max / -2;
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    transition: all 200ms ease;
+  }
+  &:hover:before,
+  &:hover :empty,
+  &:hover:after {
+    background-color: @color-hover;
+  }
+  // Default for no text or with text on the right
+  :empty { left: @bar-width / 2; }
+  // When text is first
+  :empty:last-child {
+    left: auto;
+    right: @bar-width / 2;
+  }
+  :not(:empty) {
+    right: @bar-width / 2;
+    font-size: @min-dimension * 0.475;
+    line-height: @height;
+    padding: 0 @bar-width * 0.5;
+    right: auto;
+    left: auto;
+    display: inline-block;
+    &:last-child {
+      margin-left: @bar-width * 1.5;
+    }
+    &:first-child {
+      margin-right: @bar-width * 1.5;
+    }
+  }
+
+  // Set the default to the first in the list
+  .tricons(hamburger-menu, @min-dimension, @bar-thickness-max);
+
+  .loop (@index) when (@index > 0) {
+    @icon: e(extract(@tricons, @index));
+    &[data-tricon="@{icon}"] {
+      .tricons(@icon, @min-dimension, @bar-thickness-max);
+    }
+    .loop (@index - 1);
+  }
+
+  .loop(length(@tricons));
+}
+.tricons(hamburger-menu, @min-dimension, @bar-thickness-max) {
+  &:before { transform: translate(0px, @min-dimension * -0.14) rotate(0) scale(1, 1); }
+  :empty { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  &:after { transform: translate(0px, @min-dimension * 0.14) rotate(0) scale(1, 1); }
+}
+.tricons(arrow-left, @min-dimension, @bar-thickness) {
+  &:before { transform: translate(@min-dimension * -0.146 + @bar-thickness-max * -0.14, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
+  :empty { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  &:after { transform: translate(@min-dimension * -0.146 + @bar-thickness-max * -0.14, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
+}
+.tricons(arrow-right, @min-dimension, @bar-thickness) {
+  &:before { transform: translate(@min-dimension * 0.146 + @bar-thickness-max * 0.14, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
+  :empty { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  &:after { transform: translate(@min-dimension * 0.146 + @bar-thickness-max * 0.14, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
+}
+.tricons(arrow-up, @min-dimension, @bar-thickness) {
+  &:before { transform: translate(@min-dimension * -0.1055 - (@bar-thickness-max - 1) * -0.354, @min-dimension * -0.146 + @bar-thickness-max * -0.14) rotate(-45deg) scale(0.6, 1); }
+  :empty { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, @min-dimension * -0.146 + @bar-thickness-max * -0.14) rotate(45deg) scale(0.6, 1); }
+  &:after { transform: translate(0, 0) rotate(-90deg) scale(1, 1); }
+}
+.tricons(arrow-down, @min-dimension, @bar-thickness) {
+  &:before { transform: translate(@min-dimension * -0.1055 - (@bar-thickness-max - 1) * -0.354, @min-dimension * 0.146 + @bar-thickness-max * 0.14) rotate(45deg) scale(0.6, 1); }
+  :empty { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, @min-dimension * 0.146 + @bar-thickness-max * 0.14) rotate(-45deg) scale(0.6, 1); }
+  &:after { transform: translate(0, 0) rotate(-90deg) scale(1, 1); }
+}
+.tricons(x, @min-dimension, @bar-thickness) {
+  &:before { transform: translate(0, 0) rotate(45deg) scale(1.15, 1); }
+  :empty { transform: translate(0, 0) rotate(0) scale(0, 0); }
+  &:after { transform: translate(0, 0) rotate(-45deg) scale(1.15, 1); }
+}
+.tricons(plus, @min-dimension, @bar-thickness) {
+  &:before { transform: translate(0, 0) rotate(90deg) scale(1, 1); }
+  :empty { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  &:after { transform: translate(0, 0) rotate(0) scale(1, 1); }
+}
+.tricons(minus, @min-dimension, @bar-thickness) {
+  &:before { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  :empty { transform: translate(0, 0) rotate(0) scale(1, 1); }
+  &:after { transform: translate(0, 0) rotate(0) scale(1, 1); }
+}
+.tricons(loading, @min-dimension, @bar-thickness) {
+  &:before { transform: translate(@min-dimension * -0.146, 0) rotate(0deg) scale(1, 1);  }
+  :empty { transform: translate(0, 0) rotate(90deg) scale(1, 1); }
+  &:after { transform: translate(@min-dimension * 0.146, 0) rotate(0deg) scale(1, 1); }
+  &.animate {
+    :empty { animation: triconLoading1 1s infinite; animation-delay: 0ms;}
+    &:after { animation: triconLoading2 1s infinite; animation-delay: 150ms; }
+    &:before { animation: triconLoading3 1s infinite; animation-delay: 300ms; }
+  }
+  @keyframes triconLoading1 {
+    0% { transform: translate(@min-dimension * -0.146, 0) rotate(90deg) scale(1, 1); }
+    15% { transform: translate(@min-dimension * -0.146, 0) rotate(90deg) scale(0.4, 1); }
+    100% { transform: translate(@min-dimension * -0.146, 0) rotate(90deg) scale(1, 1); }
+  }
+  @keyframes triconLoading2 {
+    0% { transform: translate(0, 0) rotate(90deg) scale(1, 1); }
+    15% { transform: translate(0, 0) rotate(90deg) scale(0.4, 1); }
+    100% { transform: translate(0, 0) rotate(90deg) scale(1, 1); }
+  }
+  @keyframes triconLoading3 {
+    0% { transform: translate(@min-dimension * 0.146, 0) rotate(90deg) scale(1, 1); }
+    15% { transform: translate(@min-dimension * 0.146, 0) rotate(90deg) scale(0.4, 1); }
+    100% { transform: translate(@min-dimension * 0.146, 0) rotate(90deg) scale(1, 1); }
+  }
+}
+.tricons(caret-up, @min-dimension, @bar-thickness) {
+  &:before { transform: translate(@min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354, 0) rotate(-45deg) scale(0.6, 1); }
+  :empty { transform: translate(0, 0) rotate(0) scale(0, 0); }
+  &:after { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, 0) rotate(45deg) scale(0.6, 1); }
+}
+.tricons(caret-down, @min-dimension, @bar-thickness) {
+  &:before { transform: translate(@min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354, 0) rotate(45deg) scale(0.6, 1); }
+  :empty { transform: translate(0, 0) rotate(0) scale(0, 0); }
+  &:after { transform: translate(@min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354, 0) rotate(-45deg) scale(0.6, 1); }
+}
+.tricons(caret-left, @min-dimension, @bar-thickness) {
+  &:before { transform: translate(0, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
+  :empty { transform: translate(0, 0) rotate(0) scale(0, 0); }
+  &:after { transform: translate(0, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
+}
+.tricons(caret-right, @min-dimension, @bar-thickness) {
+  &:before { transform: translate(0, @min-dimension * -0.1055 + (@bar-thickness-max - 1) * 0.354) rotate(45deg) scale(0.6, 1); }
+  :empty { transform: translate(0, 0) rotate(0) scale(0, 0); }
+  &:after { transform: translate(0, @min-dimension * 0.1055 - (@bar-thickness-max - 1) * 0.354) rotate(-45deg) scale(0.6, 1); }
+}
