@@ -1,5 +1,5 @@
 # tricons
-Common (customizable) icons that can morph from one to another made with CSS; inspired by SVG animated icons (but these use no SVG; just CSS).
+Common icons—customizable via LESS—that morph from one to another with CSS transition; inspired by (but not using) SVG animated icons.
 
 ## Usage
 
