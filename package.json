@@ -1,6 +1,6 @@
 {
   "name": "tricons",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Common (customizable) icons that can morph from one to another made with CSS; inspired by SVG animated icons (but these use no SVG; just CSS).",
   "main": "null",
   "scripts": {
