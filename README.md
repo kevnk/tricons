@@ -20,7 +20,7 @@ $ bower install -S tricons
 @default-tricon: hamburger-menu;
 
 // Optionally remove unused icons from this list to slim down on your CSS
-@tricons: x, arrow-left, arrow-right, arrow-up, arrow-down, plus, minus, loading, caret-up, caret-down, caret-left, caret-right;
+@tricons: hamburger-menu, x, arrow-left, arrow-right, arrow-up, arrow-down, plus, minus, loading, caret-up, caret-down, caret-left, caret-right, heart;
 
 // Optionally customize tricons default values
 @tricon-thickness: 2px;
