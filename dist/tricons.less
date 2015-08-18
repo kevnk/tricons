@@ -1,5 +1,5 @@
 // Remove unused icons to slim down your CSS
-@tricons: hamburger-menu, x, arrow-left, arrow-right, arrow-up, arrow-down, plus, minus, loading, caret-up, caret-down, caret-left, caret-right;
+@tricons: hamburger-menu, x, arrow-left, arrow-right, arrow-up, arrow-down, plus, minus, loading, caret-up, caret-down, caret-left, caret-right, heart;
 
 @import 'tricons/hamburger-menu';
 @import 'tricons/x';
@@ -14,6 +14,7 @@
 @import 'tricons/caret-down';
 @import 'tricons/caret-left';
 @import 'tricons/caret-right';
+@import 'tricons/heart';
 
 // Customize the default values
 @tricon-thickness: 2px;
@@ -88,13 +89,13 @@
     }
   }
 
-  .tricons(@default-tricon, @min-dimension, @bar-thickness-max);
+  .tricons(@default-tricon);
 
   // Loop through all the tricons to set the styles for it
   .loop (@index) when (@index > 0) {
     @icon: e(extract(@tricons, @index));
     &[data-tricon="@{icon}"] {
-      .tricons(@icon, @min-dimension, @bar-thickness-max);
+      .tricons(@icon);
     }
     .loop (@index - 1);
   }
