@@ -1,0 +1,21 @@
+.tricons(heart) {
+  @transform1: translate(@min-dimension / 6.25, @min-dimension / -4) rotate(45deg) scale(1, 1);
+  @transform2: translate(0, 0) rotate(0) scale(0, 0);
+  @transform3: translate(@min-dimension / 38.461538462, @min-dimension / -4) rotate(-45deg) scale(1, 1);
+
+  :empty:first-child, :empty:nth-child(2):nth-last-child(3) {
+    transform: @transform1;
+    width: @min-dimension / 3.2;
+    height: @min-dimension / 2;
+    border-radius: (@min-dimension / 2) (@min-dimension / 2) 0 0;
+  }
+  :empty:first-child + :empty, :empty:nth-child(2):nth-last-child(3) + :empty {
+    transform: @transform2;
+  }
+  :empty:first-child + :empty + :empty, :empty:nth-child(2):nth-last-child(3) + :empty + :empty {
+    transform: @transform3;
+    width: @min-dimension / 3.2;
+    height: @min-dimension / 2;
+    border-radius: (@min-dimension / 3.2) (@min-dimension / 3.2) 0 0;
+  }
+}

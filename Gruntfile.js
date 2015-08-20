@@ -37,8 +37,10 @@ module.exports = function(grunt) {
       dist: {
         files: [
           {
-            src: ['./src/styles/less/tricons.less'],
-            dest: './dist/tricons.less'
+            expand: true,
+            cwd: './src/styles/less',
+            src: ['tricons/**', 'tricons.less'],
+            dest: './dist/',
           },
           {
             src: ['./src/scripts/js/tricons.js'],
