@@ -26,11 +26,13 @@ var $triconToggles = $('[data-tricon-toggle]');
 $triconToggles.each(function(){
   var $tricon = $(this);
   $tricon.on('click', function(){
-    var origIcon = $tricon.data('tricon-orig') || $tricon.attr('data-tricon');
-    $tricon.data('tricon-orig', origIcon);
+    var origAttr = $tricon.attr('data-tricon-orig')
+    var hasTriconOrig = (typeof origAttr !== typeof undefined && origAttr !== false);
+    var origIcon = hasTriconOrig ? origAttr : $tricon.attr('data-tricon');
+    $tricon.attr('data-tricon-orig', origIcon);
     var toggleIcon = $tricon.data('tricon-toggle');
     var lastIcon = $tricon.attr('data-tricon');
-    var newIcon = !lastIcon || lastIcon === origIcon ? toggleIcon : origIcon;
+    var newIcon = lastIcon === origIcon ? toggleIcon : origIcon;
     animateTricon($tricon, lastIcon, newIcon);
   });
 });

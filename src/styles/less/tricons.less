@@ -65,6 +65,7 @@
     position: absolute;
     top: 50%;
     transition: all 200ms ease;
+    opacity: 1;
   }
   &:hover :empty {
     background-color: @color-hover;
@@ -81,12 +82,12 @@
     right: auto;
     left: auto;
     display: inline-block;
-    transition: margin 100ms ease;
+    transition: margin 100ms ease-in-out;
     &:last-child {
-      margin-left: @bar-width * 1.5;
+      margin-left: @bar-width * 1.33;
     }
     &:first-child {
-      margin-right: @bar-width * 1.5;
+      margin-right: @bar-width * 1.33;
     }
   }
   &[data-tricon=""] {
@@ -97,6 +98,10 @@
       &:first-child {
         margin-right: 0;
       }
+    }
+    :empty {
+      transition: all 100ms ease;
+      opacity: 0;
     }
   }
 
