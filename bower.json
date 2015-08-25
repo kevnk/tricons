@@ -16,10 +16,14 @@
   "license": "MIT",
   "ignore": [
     "**/.*",
+    ".bowerrc",
+    ".gitignore",
+    "bower.json",
+    "Gruntfile",
     "node_modules",
-    "bower_components",
-    "test",
-    "tests"
+    "package.json",
+    "README.md",
+    "src"
   ],
   "dependencies": {
     "jquery": "~2.1.4"
