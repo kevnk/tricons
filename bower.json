@@ -1,6 +1,6 @@
 {
   "name": "tricons",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "homepage": "https://github.com/kevnk/tricons",
   "authors": [
     "Kevin Kirchner <hello@kevnk.com>"
@@ -19,7 +19,7 @@
     ".bowerrc",
     ".gitignore",
     "bower.json",
-    "Gruntfile",
+    "Gruntfile.*",
     "node_modules",
     "package.json",
     "README.md",

@@ -1,6 +1,6 @@
 {
   "name": "tricons",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "Common icons—customizable via LESS—that morph from one to another with CSS transition; inspired by (but not using) SVG animated icons.",
   "main": "dist/tricons.less",
   "scripts": {
