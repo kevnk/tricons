@@ -26,7 +26,7 @@ var $triconToggles = $('[data-tricon-toggle]');
 $triconToggles.each(function(){
   var $tricon = $(this);
   $tricon.on('click', function(){
-    var origIcon = $tricon.data('tricon-orig') || $tricon.attr('data-tricon') || 'hamburger-menu';
+    var origIcon = $tricon.data('tricon-orig') || $tricon.attr('data-tricon');
     $tricon.data('tricon-orig', origIcon);
     var toggleIcon = $tricon.data('tricon-toggle');
     var lastIcon = $tricon.attr('data-tricon');

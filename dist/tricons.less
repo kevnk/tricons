@@ -81,11 +81,22 @@
     right: auto;
     left: auto;
     display: inline-block;
+    transition: margin 100ms ease;
     &:last-child {
       margin-left: @bar-width * 1.5;
     }
     &:first-child {
       margin-right: @bar-width * 1.5;
+    }
+  }
+  &[data-tricon=""] {
+    :not(:empty) {
+      &:last-child {
+        margin-left: 0;
+      }
+      &:first-child {
+        margin-right: 0;
+      }
     }
   }
 
