@@ -1,63 +1,86 @@
+@import 'tricons/empty';
+@import 'tricons/loading';
+@import 'tricons/menu';
+@import 'tricons/x';
 
+$tricon-icons: (menu x empty loading) !default;
+$tricon-active-class: ".active " !default;
 $tricon-thickness: 2px !default;
-$tricon-min-width: 40px !default;
-$tricon-height: 40px !default;
-$tricon-pad-vert: 0 !default;
-$tricon-pad-horz: 0 !default;
+$tricon-width: 21px !default;
+$tricon-height: 12px !default;
+$tricon-pad-vert: 6px !default;
+$tricon-pad-horz: 6px !default;
 $tricon-color: #fff !default;
-$tricon-color-hover: #fff !default;
-$tricon-bg-color: #2A97EF !default;
-$tricon-bg-color-hover: saturate(lighten(#2A97EF, 5%), 5%) !default;
+$tricon-color-hover: #000 !default;
 
-@mixin tricon($thickness: $tricon-thickness, $min-width: $tricon-min-width, $height: $tricon-height, $pad-vert: $tricon-pad-vert, $pad-horz: $tricon-pad-horz, $color: $tricon-color, $color-hover: $tricon-color-hover, $bg-color: $tricon-bg-color, $bg-color-hover: $tricon-bg-color-hover) {
-  $min-dimension: min($height, $min-width);
-  $bar-width: $min-dimension / 2;
-  $bar-thickness-max: min($min-dimension * 0.125, $thickness);
-  height: $height + $pad-vert * 2;
-  color: $color;
-  padding: $pad-vert $pad-horz;
-  background-color: $bg-color;
+@mixin tricon-bar1 { &:before { @content; } }
+@mixin tricon-bar2 { i:before { @content; } }
+@mixin tricon-bar3 { i:after { @content; } }
+@mixin tricon-bar4 { &:after { @content; } }
+@mixin tricon-icon {
+  @include tricon-bar1 { @content; }
+  @include tricon-bar2 { @content; }
+  @include tricon-bar3 { @content; }
+  @include tricon-bar4 { @content; }
+}
+
+@mixin tricon($icons: $tricon-icons, $active-class: $tricon-active-class, $thickness: $tricon-thickness, $width: $tricon-width, $height: $tricon-height, $pad-vert: $tricon-pad-vert, $pad-horz: $tricon-pad-horz, $color: $tricon-color, $color-hover: $tricon-color-hover) {
+  $bar-thickness: $thickness;
+  $bar-width: $width;
+  width: 0;
+  // Width is set in each tricon mixin
+  &%tricon-width {
+    width: $width + $pad-horz;
+  }
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   display: inline-block;
   position: relative;
-  text-align: center;
+  top: -$bar-thickness / 2;
+  vertical-align: super;
   font-size: 0;
   transition: all 200ms ease;
-  &:before {
+
+  %all-bars,
+  &%all-bars {
     content: '';
+    height: $bar-thickness;
+    width: $bar-width;
+    background: $color;
     display: block;
-    width: $min-width;
+    position: absolute;
+    top: 50%;
+    margin-top: -$bar-thickness / 2;
+    left: 50%;
+    transform: translate(0, 0) rotate(90deg) scale(0, 1);
+    transition: all 200ms ease;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    margin-left: -($bar-width / 2);
   }
-  &:hover {
-    color: $color-hover;
-    background-color: $bg-color-hover;
+
+  @include tricon-icon { @extend %all-bars; }
+
+  &:first-child {
+    @include tricon-icon { margin-left: -(($bar-width + $pad-horz) / 2); }
+  }
+  &:last-child {
+    @include tricon-icon { margin-left: -(($bar-width - $pad-horz) / 2); }
+  }
+
+  &:first-child:nth-last-child(1) {
+   @include tricon-icon { margin-left: -($bar-width / 2); }
+  }
+
+  @each $icon in $icons {
+    @if mixin-exists(tricon-#{$icon}) {
+      @if $icon == menu { @include tricon-menu($icons, $active-class, $bar-thickness, $bar-width, $height, $pad-vert, $pad-horz, $color, $color-hover); }
+      @else if $icon == x { @include tricon-x($icons, $active-class, $bar-thickness, $bar-width, $height, $pad-vert, $pad-horz, $color, $color-hover); }
+      @else if $icon == empty { @include tricon-empty($icons, $active-class, $bar-thickness, $bar-width, $height, $pad-vert, $pad-horz, $color, $color-hover); }
+      @else if $icon == loading { @include tricon-loading($icons, $active-class, $bar-thickness, $bar-width, $height, $pad-vert, $pad-horz, $color, $color-hover); }
+    }
   }
 }
 
-@mixin button-reset() {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  background: none;
-  border: 0;
-  color: inherit;
-  /* cursor: default; */
-  font: inherit;
-  line-height: normal;
-  overflow: visible;
-  padding: 0;
-  -webkit-user-select: none; /* for button */
-  -moz-user-select: none;
-  -ms-user-select: none;
-  &::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-  }
-}
-
-.tricon {
-  @include tricon();
-  &button {
-    @include button-reset();
-  }
-}

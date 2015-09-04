@@ -4708,57 +4708,334 @@ a.bg-danger:hover {
   .hidden-print .hidden-print {
     display: none !important; } }
 
-.tricon {
-  height: 40px;
-  color: #fff;
-  padding: 0 0;
-  background-color: #2A97EF;
+.tricon,
+[data-tricon] {
+  width: 0;
   box-sizing: border-box;
   display: inline-block;
   position: relative;
-  text-align: center;
+  top: -1px;
+  vertical-align: super;
   font-size: 0;
   transition: all 200ms ease; }
-  .tricon:before {
+  .tricon[data-tricon=menu],
+  .tricon[class*=menu-],
+  .active .tricon[class*=-menu],
+  .tricon[data-tricon=x],
+  .tricon[class*=x-],
+  .active .tricon[class*=-x],
+  .tricon[data-tricon=loading],
+  .tricon[class*=loading-],
+  .active .tricon[class*=-loading],
+  [data-tricon][data-tricon=menu],
+  [data-tricon][class*=menu-],
+  .active [data-tricon][class*=-menu], [data-tricon][data-tricon=x],
+  [data-tricon][class*=x-],
+  .active [data-tricon][class*=-x], [data-tricon][data-tricon=loading],
+  [data-tricon][class*=loading-],
+  .active [data-tricon][class*=-loading] {
+    width: 27px; }
+  .tricon .tricon:before,
+  .tricon [data-tricon]:before,
+  .tricon i:before,
+  .tricon i:after,
+  .tricon .tricon:after,
+  .tricon [data-tricon]:after,
+  .tricon:before,
+  .tricon i.tricon:before,
+  [data-tricon] i.tricon:before,
+  .tricon i.tricon:after,
+  [data-tricon] i.tricon:after,
+  .tricon:after,
+  [data-tricon] .tricon:before,
+  [data-tricon] [data-tricon]:before,
+  [data-tricon] i:before, [data-tricon] i:after, [data-tricon] .tricon:after,
+  [data-tricon] [data-tricon]:after,
+  [data-tricon]:before, .tricon i[data-tricon]:before,
+  [data-tricon] i[data-tricon]:before, .tricon i[data-tricon]:after,
+  [data-tricon] i[data-tricon]:after, [data-tricon]:after {
     content: '';
+    height: 2px;
+    width: 21px;
+    background: #fff;
     display: block;
-    width: 40px; }
-  .tricon:hover {
-    color: #fff;
-    background-color: #3da3f6; }
-  .triconbutton {
-    box-sizing: content-box;
-    background: none;
-    border: 0;
-    color: inherit;
-    /* cursor: default; */
-    font: inherit;
-    line-height: normal;
-    overflow: visible;
-    padding: 0;
-    -webkit-user-select: none;
-    /* for button */
-    -moz-user-select: none;
-    -ms-user-select: none; }
-    .triconbutton::-moz-focus-inner {
-      border: 0;
-      padding: 0; }
+    position: absolute;
+    top: 50%;
+    margin-top: -1px;
+    left: 50%;
+    -webkit-transform: translate(0, 0) rotate(90deg) scale(0, 1);
+            transform: translate(0, 0) rotate(90deg) scale(0, 1);
+    transition: all 200ms ease;
+    box-sizing: border-box;
+    margin-left: -10.5px; }
+  .tricon:first-child:before,
+  [data-tricon]:first-child:before {
+    margin-left: -13.5px; }
+  .tricon:first-child i:before,
+  [data-tricon]:first-child i:before {
+    margin-left: -13.5px; }
+  .tricon:first-child i:after,
+  [data-tricon]:first-child i:after {
+    margin-left: -13.5px; }
+  .tricon:first-child:after,
+  [data-tricon]:first-child:after {
+    margin-left: -13.5px; }
+  .tricon:last-child:before,
+  [data-tricon]:last-child:before {
+    margin-left: -7.5px; }
+  .tricon:last-child i:before,
+  [data-tricon]:last-child i:before {
+    margin-left: -7.5px; }
+  .tricon:last-child i:after,
+  [data-tricon]:last-child i:after {
+    margin-left: -7.5px; }
+  .tricon:last-child:after,
+  [data-tricon]:last-child:after {
+    margin-left: -7.5px; }
+  .tricon:first-child:nth-last-child(1):before,
+  [data-tricon]:first-child:nth-last-child(1):before {
+    margin-left: -10.5px; }
+  .tricon:first-child:nth-last-child(1) i:before,
+  [data-tricon]:first-child:nth-last-child(1) i:before {
+    margin-left: -10.5px; }
+  .tricon:first-child:nth-last-child(1) i:after,
+  [data-tricon]:first-child:nth-last-child(1) i:after {
+    margin-left: -10.5px; }
+  .tricon:first-child:nth-last-child(1):after,
+  [data-tricon]:first-child:nth-last-child(1):after {
+    margin-left: -10.5px; }
+  .tricon[data-tricon=menu]:before,
+  .tricon[class*=menu-]:before,
+  .active .tricon[class*=-menu]:before,
+  [data-tricon][data-tricon=menu]:before,
+  [data-tricon][class*=menu-]:before,
+  .active [data-tricon][class*=-menu]:before {
+    -webkit-transform: translate(0, -6px) rotate(0) scale(1, 1);
+            transform: translate(0, -6px) rotate(0) scale(1, 1); }
+  .tricon[data-tricon=menu] i:before,
+  .tricon[class*=menu-] i:before,
+  .active .tricon[class*=-menu] i:before,
+  [data-tricon][data-tricon=menu] i:before,
+  [data-tricon][class*=menu-] i:before,
+  .active [data-tricon][class*=-menu] i:before {
+    -webkit-transform: translate(0, 0) rotate(0) scale(1, 1);
+            transform: translate(0, 0) rotate(0) scale(1, 1); }
+  .tricon[data-tricon=menu] i:after,
+  .tricon[class*=menu-] i:after,
+  .active .tricon[class*=-menu] i:after,
+  [data-tricon][data-tricon=menu] i:after,
+  [data-tricon][class*=menu-] i:after,
+  .active [data-tricon][class*=-menu] i:after {
+    -webkit-transform: translate(0, 6px) rotate(0) scale(1, 1);
+            transform: translate(0, 6px) rotate(0) scale(1, 1); }
+  .tricon[data-tricon=menu]:after,
+  .tricon[class*=menu-]:after,
+  .active .tricon[class*=-menu]:after,
+  [data-tricon][data-tricon=menu]:after,
+  [data-tricon][class*=menu-]:after,
+  .active [data-tricon][class*=-menu]:after {
+    -webkit-transform: translate(0, 0) rotate(0) scale(0, 0);
+            transform: translate(0, 0) rotate(0) scale(0, 0); }
+  .tricon[data-tricon=x]:before,
+  .tricon[class*=x-]:before,
+  .active .tricon[class*=-x]:before,
+  [data-tricon][data-tricon=x]:before,
+  [data-tricon][class*=x-]:before,
+  .active [data-tricon][class*=-x]:before {
+    -webkit-transform: translate(0, 0) rotate(45deg) scale(1.15, 1);
+            transform: translate(0, 0) rotate(45deg) scale(1.15, 1); }
+  .tricon[data-tricon=x] i:before,
+  .tricon[class*=x-] i:before,
+  .active .tricon[class*=-x] i:before,
+  [data-tricon][data-tricon=x] i:before,
+  [data-tricon][class*=x-] i:before,
+  .active [data-tricon][class*=-x] i:before {
+    -webkit-transform: translate(0, 0) rotate(0) scale(0, 0);
+            transform: translate(0, 0) rotate(0) scale(0, 0); }
+  .tricon[data-tricon=x] i:after,
+  .tricon[class*=x-] i:after,
+  .active .tricon[class*=-x] i:after,
+  [data-tricon][data-tricon=x] i:after,
+  [data-tricon][class*=x-] i:after,
+  .active [data-tricon][class*=-x] i:after {
+    -webkit-transform: translate(0, 0) rotate(-45deg) scale(1.15, 1);
+            transform: translate(0, 0) rotate(-45deg) scale(1.15, 1); }
+  .tricon[data-tricon=x]:after,
+  .tricon[class*=x-]:after,
+  .active .tricon[class*=-x]:after,
+  [data-tricon][data-tricon=x]:after,
+  [data-tricon][class*=x-]:after,
+  .active [data-tricon][class*=-x]:after {
+    -webkit-transform: translate(0, 0) rotate(0) scale(0, 0);
+            transform: translate(0, 0) rotate(0) scale(0, 0); }
+  .tricon[data-tricon=empty],
+  .tricon[class*=empty-],
+  .active .tricon[class*=-empty],
+  [data-tricon][data-tricon=empty],
+  [data-tricon][class*=empty-],
+  .active [data-tricon][class*=-empty] {
+    width: 0; }
+    .tricon[data-tricon=empty]:before,
+    .tricon[class*=empty-]:before,
+    .active .tricon[class*=-empty]:before,
+    [data-tricon][data-tricon=empty]:before,
+    [data-tricon][class*=empty-]:before,
+    .active [data-tricon][class*=-empty]:before {
+      -webkit-transform: translate(0, 0) rotate(90deg) scale(0, 1);
+              transform: translate(0, 0) rotate(90deg) scale(0, 1); }
+    .tricon[data-tricon=empty] i:before,
+    .tricon[class*=empty-] i:before,
+    .active .tricon[class*=-empty] i:before,
+    [data-tricon][data-tricon=empty] i:before,
+    [data-tricon][class*=empty-] i:before,
+    .active [data-tricon][class*=-empty] i:before {
+      -webkit-transform: translate(0, 0) rotate(90deg) scale(0, 1);
+              transform: translate(0, 0) rotate(90deg) scale(0, 1); }
+    .tricon[data-tricon=empty] i:after,
+    .tricon[class*=empty-] i:after,
+    .active .tricon[class*=-empty] i:after,
+    [data-tricon][data-tricon=empty] i:after,
+    [data-tricon][class*=empty-] i:after,
+    .active [data-tricon][class*=-empty] i:after {
+      -webkit-transform: translate(0, 0) rotate(90deg) scale(0, 1);
+              transform: translate(0, 0) rotate(90deg) scale(0, 1); }
+    .tricon[data-tricon=empty]:after,
+    .tricon[class*=empty-]:after,
+    .active .tricon[class*=-empty]:after,
+    [data-tricon][data-tricon=empty]:after,
+    [data-tricon][class*=empty-]:after,
+    .active [data-tricon][class*=-empty]:after {
+      -webkit-transform: translate(0, 0) rotate(90deg) scale(0, 1);
+              transform: translate(0, 0) rotate(90deg) scale(0, 1); }
+  .tricon[data-tricon=loading]:before,
+  .tricon[class*=loading-]:before,
+  .active .tricon[class*=-loading]:before,
+  [data-tricon][data-tricon=loading]:before,
+  [data-tricon][class*=loading-]:before,
+  .active [data-tricon][class*=-loading]:before {
+    -webkit-transform: translate(-7px, 0) rotate(90deg) scale(0.9, 1);
+            transform: translate(-7px, 0) rotate(90deg) scale(0.9, 1); }
+  .tricon[data-tricon=loading] i:before,
+  .tricon[class*=loading-] i:before,
+  .active .tricon[class*=-loading] i:before,
+  [data-tricon][data-tricon=loading] i:before,
+  [data-tricon][class*=loading-] i:before,
+  .active [data-tricon][class*=-loading] i:before {
+    -webkit-transform: translate(0, 0) rotate(90deg) scale(0.9, 1);
+            transform: translate(0, 0) rotate(90deg) scale(0.9, 1); }
+  .tricon[data-tricon=loading] i:after,
+  .tricon[class*=loading-] i:after,
+  .active .tricon[class*=-loading] i:after,
+  [data-tricon][data-tricon=loading] i:after,
+  [data-tricon][class*=loading-] i:after,
+  .active [data-tricon][class*=-loading] i:after {
+    -webkit-transform: translate(7px, 0) rotate(90deg) scale(0.9, 1);
+            transform: translate(7px, 0) rotate(90deg) scale(0.9, 1); }
+  .tricon[data-tricon=loading]:after,
+  .tricon[class*=loading-]:after,
+  .active .tricon[class*=-loading]:after,
+  [data-tricon][data-tricon=loading]:after,
+  [data-tricon][class*=loading-]:after,
+  .active [data-tricon][class*=-loading]:after {
+    -webkit-transform: translate(0, 0) rotate(0) scale(0, 0);
+            transform: translate(0, 0) rotate(0) scale(0, 0); }
+  .tricon[data-tricon=loading].animate:before,
+  .tricon[class*=loading-].animate:before,
+  .active .tricon[class*=-loading].animate:before,
+  [data-tricon][data-tricon=loading].animate:before,
+  [data-tricon][class*=loading-].animate:before,
+  .active [data-tricon][class*=-loading].animate:before {
+    -webkit-animation: triconLoading1 900ms infinite;
+            animation: triconLoading1 900ms infinite;
+    -webkit-animation-delay: 0ms;
+            animation-delay: 0ms; }
+  .tricon[data-tricon=loading].animate i:before,
+  .tricon[class*=loading-].animate i:before,
+  .active .tricon[class*=-loading].animate i:before,
+  [data-tricon][data-tricon=loading].animate i:before,
+  [data-tricon][class*=loading-].animate i:before,
+  .active [data-tricon][class*=-loading].animate i:before {
+    -webkit-animation: triconLoading2 900ms infinite;
+            animation: triconLoading2 900ms infinite;
+    -webkit-animation-delay: 150ms;
+            animation-delay: 150ms; }
+  .tricon[data-tricon=loading].animate i:after,
+  .tricon[class*=loading-].animate i:after,
+  .active .tricon[class*=-loading].animate i:after,
+  [data-tricon][data-tricon=loading].animate i:after,
+  [data-tricon][class*=loading-].animate i:after,
+  .active [data-tricon][class*=-loading].animate i:after {
+    -webkit-animation: triconLoading3 900ms infinite;
+            animation: triconLoading3 900ms infinite;
+    -webkit-animation-delay: 300ms;
+            animation-delay: 300ms; }
 
-button {
-  box-sizing: content-box;
-  background: none;
-  border: 0;
-  color: inherit;
-  /* cursor: default; */
-  font: inherit;
-  line-height: normal;
-  overflow: visible;
-  padding: 0;
-  -webkit-user-select: none;
-  /* for button */
-  -moz-user-select: none;
-  -ms-user-select: none; }
-  button::-moz-focus-inner {
-    border: 0;
-    padding: 0; }
+@-webkit-keyframes triconLoading1 {
+  0% {
+    -webkit-transform: translate(-7px, 0) rotate(90deg) scale(0.9, 1);
+            transform: translate(-7px, 0) rotate(90deg) scale(0.9, 1); }
+  15% {
+    -webkit-transform: translate(-7px, 0) rotate(90deg) scale(0.3, 1);
+            transform: translate(-7px, 0) rotate(90deg) scale(0.3, 1); }
+  100% {
+    -webkit-transform: translate(-7px, 0) rotate(90deg) scale(0.9, 1);
+            transform: translate(-7px, 0) rotate(90deg) scale(0.9, 1); } }
+
+@keyframes triconLoading1 {
+  0% {
+    -webkit-transform: translate(-7px, 0) rotate(90deg) scale(0.9, 1);
+            transform: translate(-7px, 0) rotate(90deg) scale(0.9, 1); }
+  15% {
+    -webkit-transform: translate(-7px, 0) rotate(90deg) scale(0.3, 1);
+            transform: translate(-7px, 0) rotate(90deg) scale(0.3, 1); }
+  100% {
+    -webkit-transform: translate(-7px, 0) rotate(90deg) scale(0.9, 1);
+            transform: translate(-7px, 0) rotate(90deg) scale(0.9, 1); } }
+
+@-webkit-keyframes triconLoading2 {
+  0% {
+    -webkit-transform: translate(0, 0) rotate(90deg) scale(0.9, 1);
+            transform: translate(0, 0) rotate(90deg) scale(0.9, 1); }
+  15% {
+    -webkit-transform: translate(0, 0) rotate(90deg) scale(0.3, 1);
+            transform: translate(0, 0) rotate(90deg) scale(0.3, 1); }
+  100% {
+    -webkit-transform: translate(0, 0) rotate(90deg) scale(0.9, 1);
+            transform: translate(0, 0) rotate(90deg) scale(0.9, 1); } }
+
+@keyframes triconLoading2 {
+  0% {
+    -webkit-transform: translate(0, 0) rotate(90deg) scale(0.9, 1);
+            transform: translate(0, 0) rotate(90deg) scale(0.9, 1); }
+  15% {
+    -webkit-transform: translate(0, 0) rotate(90deg) scale(0.3, 1);
+            transform: translate(0, 0) rotate(90deg) scale(0.3, 1); }
+  100% {
+    -webkit-transform: translate(0, 0) rotate(90deg) scale(0.9, 1);
+            transform: translate(0, 0) rotate(90deg) scale(0.9, 1); } }
+
+@-webkit-keyframes triconLoading3 {
+  0% {
+    -webkit-transform: translate(7px, 0) rotate(90deg) scale(0.9, 1);
+            transform: translate(7px, 0) rotate(90deg) scale(0.9, 1); }
+  15% {
+    -webkit-transform: translate(7px, 0) rotate(90deg) scale(0.3, 1);
+            transform: translate(7px, 0) rotate(90deg) scale(0.3, 1); }
+  100% {
+    -webkit-transform: translate(7px, 0) rotate(90deg) scale(0.9, 1);
+            transform: translate(7px, 0) rotate(90deg) scale(0.9, 1); } }
+
+@keyframes triconLoading3 {
+  0% {
+    -webkit-transform: translate(7px, 0) rotate(90deg) scale(0.9, 1);
+            transform: translate(7px, 0) rotate(90deg) scale(0.9, 1); }
+  15% {
+    -webkit-transform: translate(7px, 0) rotate(90deg) scale(0.3, 1);
+            transform: translate(7px, 0) rotate(90deg) scale(0.3, 1); }
+  100% {
+    -webkit-transform: translate(7px, 0) rotate(90deg) scale(0.9, 1);
+            transform: translate(7px, 0) rotate(90deg) scale(0.9, 1); } }
+
+#targeted_tricon {
+  padding: 6px; }
 /*# sourceMappingURL=styles.css.map */

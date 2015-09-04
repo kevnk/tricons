@@ -1,0 +1,19 @@
+@mixin tricon-x ($icons, $active-class, $bar-thickness, $bar-width, $height, $pad-vert, $pad-horz, $color, $color-hover) {
+  &[data-tricon=x],
+  &[class*=x-],
+  #{$active-class}&[class*=-x] {
+    @extend %tricon-width;
+    @include tricon-bar1 {
+      transform: translate(0, 0) rotate(45deg) scale(1.15, 1);
+    }
+    @include tricon-bar2 {
+      transform: translate(0, 0) rotate(0) scale(0, 0);
+    }
+    @include tricon-bar3 {
+      transform: translate(0, 0) rotate(-45deg) scale(1.15, 1);
+    }
+    @include tricon-bar4 {
+      transform: translate(0, 0) rotate(0) scale(0, 0);
+    }
+  }
+}

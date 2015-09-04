@@ -21,61 +21,48 @@
     </header>
  -->
     <main class="container">
-      <p>Toggle button</p>
-      <a class="tricon" href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span>Menu</span>
-      </a>
-      <hr>
-
-      <p>Customized toggle button</p>
-      <a class="tricon" href="#">
-        <span>Menu</span>
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
-      <hr>
-
-      <p>Form interactions</p>
-      <form action="#">
-        <button class="tricon">
-          <span>Login</span>
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-      </form>
-      <hr>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card card-block">
+            <h4 class="card-title">Toggle button</h4>
+            <a class="btn btn-primary" href="#" data-toggle="button">
+              <i class="tricon menu-x"><i></i></i><span>Menu</span>
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card card-block">
+            <h4 class="card-title">Form interaction</h4>
+            <form action="#">
+              <button class="btn btn-primary" data-toggle="button">
+                <span>Save Something</span><i class="tricon -loading"><i></i></i>
+              </button>
+            </form>
+          </div>
+        </div>
 <!--
-      <p>Toggled by links</p>
-      <a id="tricon_target" class="tricon" href="#">
-        <span></span>
-        <span></span>
-        <span></span>
-      </a>
-      <div class="links">
-        <a href="#tricon_target" data-to-tricon="hamburger-menu">Hamburger Menu</a>
-        <a href="#tricon_target" data-to-tricon="x">Close Icon</a>
-        <a href="#tricon_target" data-to-tricon="arrow-left">Left Arrow</a>
-        <a href="#tricon_target" data-to-tricon="arrow-right">Right Arrow</a>
-        <a href="#tricon_target" data-to-tricon="arrow-up">Up Arrow</a>
-        <a href="#tricon_target" data-to-tricon="arrow-down">Down Arrow</a>
-        <a href="#tricon_target" data-to-tricon="plus">Plus sign</a>
-        <a href="#tricon_target" data-to-tricon="minus">Minus sign</a>
-        <a href="#tricon_target" data-to-tricon="loading">Loading</a>
-        <a href="#tricon_target" data-to-tricon="caret-up">Caret up</a>
-        <a href="#tricon_target" data-to-tricon="caret-down">Caret down</a>
-        <a href="#tricon_target" data-to-tricon="caret-left">Caret left</a>
-        <a href="#tricon_target" data-to-tricon="caret-right">Caret right</a>
-        <a href="#tricon_target" data-to-tricon="heart">Heart</a>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-block">
+              <h4 class="card-title">Externally Targeted</h4>
+              <button id="targeted_tricon" class="btn btn-primary" data-toggle="button">
+                <i data-tricon="x"><i></i></i>
+              </button>
+            </div>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item"><a href="#targeted_tricon" class="card-link" data-tricon-show="menu">menu-</a></li>
+              <li class="list-group-item"><a href="#targeted_tricon" class="card-link" data-tricon-show="x">x-</a></li>
+              <li class="list-group-item"><a href="#targeted_tricon" class="card-link" data-tricon-show="empty">empty-</a></li>
+              <li class="list-group-item"><a href="#targeted_tricon" class="card-link" data-tricon-show="loading">loading-</a></li>
+            </ul>
+          </div>
+        </div>
       </div>
  -->
     </main>
 
     <script src="lib/jquery/dist/jquery.min.js"></script>
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="scripts/js/tricons.js"></script>
     <script src="//localhost:33333/livereload.js"></script>
   </body>

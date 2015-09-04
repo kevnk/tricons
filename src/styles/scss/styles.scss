@@ -1,28 +1,11 @@
 @import "../../lib/bootstrap/scss/bootstrap";
 @import "tricons";
 
-@mixin button-reset() {
-  -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box;
-  box-sizing: content-box;
-  background: none;
-  border: 0;
-  color: inherit;
-  /* cursor: default; */
-  font: inherit;
-  line-height: normal;
-  overflow: visible;
-  padding: 0;
-  -webkit-user-select: none; /* for button */
-  -moz-user-select: none;
-  -ms-user-select: none;
-  &::-moz-focus-inner {
-    border: 0;
-    padding: 0;
-  }
+.tricon,
+[data-tricon] {
+  @include tricon;
 }
 
-button {
-  @include button-reset();
+#targeted_tricon {
+  padding: 6px;
 }
-

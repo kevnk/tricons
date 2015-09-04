@@ -19,11 +19,7 @@ module.exports = function(grunt) {
 
     postcss: {
       options: {
-        processors: [
-          require('autoprefixer-core')({
-            browsers: ['last 2 versions']
-          })
-        ]
+        processors: require('autoprefixer-core')({browsers: 'last 2 versions'}),
       },
       dev: {
         options: {
@@ -71,7 +67,7 @@ module.exports = function(grunt) {
           reload: false,
           spawn: false
         },
-        files: './src/styles/scss/**/*.scss',
+        files: ['./src/styles/scss/*.scss', './src/styles/scss/tricons/*.scss'],
         tasks: ['dist']
       }
     }

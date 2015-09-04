@@ -1,0 +1,47 @@
+@mixin tricon-loading ($icons, $active-class, $bar-thickness, $bar-width, $height, $pad-vert, $pad-horz, $color, $color-hover) {
+  &[data-tricon=loading],
+  &[class*=loading-],
+  #{$active-class}&[class*=-loading] {
+    @extend %tricon-width;
+    @include tricon-bar1 {
+      transform: translate($bar-width / -3, 0) rotate(90deg) scale(0.9, 1);
+    }
+    @include tricon-bar2 {
+      transform: translate(0, 0) rotate(90deg) scale(0.9, 1);
+    }
+    @include tricon-bar3 {
+      transform: translate($bar-width / 3, 0) rotate(90deg) scale(0.9, 1);
+    }
+    @include tricon-bar4 {
+      transform: translate(0, 0) rotate(0) scale(0, 0);
+    }
+    &.animate {
+      @include tricon-bar1 {
+        animation: triconLoading1 900ms infinite; animation-delay: 0ms;
+      }
+      @include tricon-bar2 {
+        animation: triconLoading2 900ms infinite; animation-delay: 150ms;
+      }
+      @include tricon-bar3 {
+        animation: triconLoading3 900ms infinite; animation-delay: 300ms;
+      }
+    }
+  }
+  @keyframes triconLoading1 {
+    0% { transform: translate($bar-width / -3, 0) rotate(90deg) scale(0.9, 1); }
+    15% { transform: translate($bar-width / -3, 0) rotate(90deg) scale(0.3, 1); }
+    100% { transform: translate($bar-width / -3, 0) rotate(90deg) scale(0.9, 1); }
+  }
+
+  @keyframes triconLoading2 {
+    0% { transform: translate(0, 0) rotate(90deg) scale(0.9, 1); }
+    15% { transform: translate(0, 0) rotate(90deg) scale(0.3, 1); }
+    100% { transform: translate(0, 0) rotate(90deg) scale(0.9, 1); }
+  }
+
+  @keyframes triconLoading3 {
+    0% { transform: translate($bar-width / 3, 0) rotate(90deg) scale(0.9, 1); }
+    15% { transform: translate($bar-width / 3, 0) rotate(90deg) scale(0.3, 1); }
+    100% { transform: translate($bar-width / 3, 0) rotate(90deg) scale(0.9, 1); }
+  }
+}
