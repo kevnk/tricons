@@ -5,15 +5,15 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
-    less: {
+
+    sass: {
+      options: {
+        sourceMap: true
+      },
       dev: {
-        options: {
-          'sourceMapFileInline': true,
-          'sourceMap': true,
-        },
         files: {
-          './src/styles/css/styles.css': './src/styles/less/styles.less'
-        },
+          './src/styles/css/styles.css': './src/styles/scss/styles.scss'
+        }
       }
     },
 
@@ -38,8 +38,8 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            cwd: './src/styles/less',
-            src: ['tricons/**', 'tricons.less'],
+            cwd: './src/styles/scss',
+            src: ['tricons/**', 'tricons.scss'],
             dest: './dist/',
           },
           {
@@ -66,19 +66,19 @@ module.exports = function(grunt) {
         files: ['./src/index.html']
       },
 
-      less: {
+      sass: {
         options: {
           reload: false,
           spawn: false
         },
-        files: './src/styles/less/**/*.less',
+        files: './src/styles/scss/**/*.scss',
         tasks: ['dist']
       }
     }
 
   });
 
-  grunt.registerTask('dist', ['less', 'postcss', 'copy']);
+  grunt.registerTask('dist', ['sass', 'postcss', 'copy']);
   grunt.registerTask('default', ['dist', 'watch']);
 
 };

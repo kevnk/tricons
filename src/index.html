@@ -2,7 +2,7 @@
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,10 +13,16 @@
     <link rel="stylesheet" type="text/css" href="styles/css/styles.css" />
   </head>
   <body>
-
-    <div class="container">
+<!--
+    <header class="container">
+      <nav class="navbar navbar-light bg-faded">
+        <a href="#" class="navbar-brand">tricons</a>
+      </nav>
+    </header>
+ -->
+    <main class="container">
       <p>Toggle button</p>
-      <a class="tricon" href="#" data-tricon="hamburger-menu" data-tricon-toggle="x">
+      <a class="tricon" href="#">
         <span></span>
         <span></span>
         <span></span>
@@ -25,7 +31,7 @@
       <hr>
 
       <p>Customized toggle button</p>
-      <a id="icon2" href="#" data-tricon="" data-tricon-toggle="loading">
+      <a class="tricon" href="#">
         <span>Menu</span>
         <span></span>
         <span></span>
@@ -33,13 +39,23 @@
       </a>
       <hr>
 
+      <p>Form interactions</p>
+      <form action="#">
+        <button class="tricon">
+          <span>Login</span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </form>
+      <hr>
+<!--
       <p>Toggled by links</p>
       <a id="tricon_target" class="tricon" href="#">
         <span></span>
         <span></span>
         <span></span>
       </a>
-      <!-- links to morph it -->
       <div class="links">
         <a href="#tricon_target" data-to-tricon="hamburger-menu">Hamburger Menu</a>
         <a href="#tricon_target" data-to-tricon="x">Close Icon</a>
@@ -56,7 +72,8 @@
         <a href="#tricon_target" data-to-tricon="caret-right">Caret right</a>
         <a href="#tricon_target" data-to-tricon="heart">Heart</a>
       </div>
-    </div>
+ -->
+    </main>
 
     <script src="lib/jquery/dist/jquery.min.js"></script>
     <script src="scripts/js/tricons.js"></script>

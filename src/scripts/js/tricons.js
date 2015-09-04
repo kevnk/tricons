@@ -6,6 +6,7 @@
  * @return {null}
  */
 function animateTricon($tricon, lastIcon, newIcon) {
+  console.log("%c $tricon, lastIcon, newIcon -->", 'color:#F80', $tricon, lastIcon, newIcon)
   // Change the data-icon attribute and
   // Add/remove .animate class for loading icon
   if(lastIcon == 'loading') {
@@ -36,6 +37,28 @@ $triconToggles.each(function(){
     animateTricon($tricon, lastIcon, newIcon);
   });
 });
+
+var $triconSubmits = $('[data-tricon-submit]')
+$triconSubmits.each(function(){
+  var $tricon = $(this);
+  var $form = $tricon.parents('form').first();
+  if ($form.size()) {
+    var lastIcon = $tricon.attr('data-tricon');
+    var submitIcon = $tricon.attr('data-tricon-submit');
+    $form.on('submit', function(){
+      animateTricon($tricon, lastIcon, submitIcon);
+    });
+    var completeIcon = $tricon.attr('data-tricon-complete');
+    if (completeIcon) {
+      var lastIcon = submitIcon || lastIcon;
+      $form.on('tricon.complete', function(){
+        console.log('complete');
+        animateTricon($tricon, lastIcon, completeIcon);
+      });
+    }
+  }
+});
+
 
 // Animate directly to another icon
 $triconLinks = $('[data-to-tricon]');

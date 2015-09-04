@@ -1,12 +1,13 @@
 @import 'tricons';
 
 .tricon {
+  .button-reset();
   .tricon();
   border-radius: 2px;
 }
 
 #icon2 {
-  .tricon(2px, 60px, 60px, 0, 0, #999, #fff, #111, #333);
+  .tricon(2px, 500px, 500px, 0, 0, #999, #fff, #111, #333);
   border-radius: 4px;
 }
 
@@ -37,3 +38,25 @@ hr {
     border-top: 1px solid #eee;
   }
 }
+
+.button-reset() {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  background: none;
+  border: 0;
+  color: inherit;
+  /* cursor: default; */
+  font: inherit;
+  line-height: normal;
+  overflow: visible;
+  padding: 0;
+  -webkit-user-select: none; /* for button */
+  -moz-user-select: none;
+  -ms-user-select: none;
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+}
+

@@ -1,11 +1,11 @@
 {
   "name": "tricons",
-  "version": "1.2.2",
+  "version": "1.0.0",
   "homepage": "https://github.com/kevnk/tricons",
   "authors": [
     "Kevin Kirchner <hello@kevnk.com>"
   ],
-  "description": "Common icons—customizable via LESS—that morph from one to another with CSS transition; inspired by (but not using) SVG animated icons.",
+  "description": "Common icons—customizable via SASS—that morph from one to another with CSS transition; inspired by (but not using) SVG animated icons.",
   "main": "dist/tricons.less",
   "keywords": [
     "css",
@@ -26,6 +26,7 @@
     "src"
   ],
   "dependencies": {
+    "bootstrap": "4.0.0-alpha",
     "jquery": "~2.1.4"
   }
 }
